@@ -1,0 +1,380 @@
+[
+  {
+    "id": "round-neck-tshirt",
+    "title": "Round Neck T-Shirt",
+    "category": "Apparel",
+    "image": "",
+    "href": "/products/apparel/round-neck-tshirt/",
+    "price": "\u20b975 \u00b7 \u20b9200 \u00b7 \u20b9300",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "collar-tshirt",
+    "title": "Collar T-Shirt",
+    "category": "Apparel",
+    "image": "",
+    "href": "/products/apparel/collar-tshirt/",
+    "price": "\u20b9150 \u00b7 \u20b9220 \u00b7 \u20b9450",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "sweat-shirts",
+    "title": "Sweat Shirts",
+    "category": "Apparel",
+    "image": "",
+    "href": "/products/apparel/sweat-shirts/",
+    "price": "\u20b9400 \u00b7 \u20b9450",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "hoodies",
+    "title": "Hoodies",
+    "category": "Apparel",
+    "image": "",
+    "href": "/products/apparel/hoodies/",
+    "price": "\u20b9450 \u00b7 \u20b9550 \u00b7 \u20b9650",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "pants",
+    "title": "Pants",
+    "category": "Apparel",
+    "image": "",
+    "href": "/products/apparel/pants/",
+    "price": "\u20b9495",
+    "priceNote": ""
+  },
+  {
+    "id": "jacket",
+    "title": "Jacket",
+    "category": "Apparel",
+    "image": "",
+    "href": "/products/apparel/jacket/",
+    "price": "",
+    "priceNote": ""
+  },
+  {
+    "id": "smart-caps",
+    "title": "Smart Caps",
+    "category": "Caps",
+    "image": "",
+    "href": "/products/caps/smart-caps/",
+    "price": "\u20b965",
+    "priceNote": ""
+  },
+  {
+    "id": "flexible-caps",
+    "title": "Flexible Caps",
+    "category": "Caps",
+    "image": "",
+    "href": "/products/caps/flexible-caps/",
+    "price": "\u20b985",
+    "priceNote": ""
+  },
+  {
+    "id": "foldable-caps",
+    "title": "Foldable Caps",
+    "category": "Caps",
+    "image": "",
+    "href": "/products/caps/foldable-caps/",
+    "price": "\u20b9250",
+    "priceNote": ""
+  },
+  {
+    "id": "button-fridge-magnet",
+    "title": "Button Fridge Magnet",
+    "category": "Fridge Magnets",
+    "image": "",
+    "href": "/products/fridge-magnets/button-fridge-magnet/",
+    "price": "\u20b945",
+    "priceNote": ""
+  },
+  {
+    "id": "leather-magnet",
+    "title": "Leather Magnet",
+    "category": "Fridge Magnets",
+    "image": "",
+    "href": "/products/fridge-magnets/leather-magnet/",
+    "price": "\u20b960",
+    "priceNote": ""
+  },
+  {
+    "id": "acrylic-fridge-magnet",
+    "title": "Acrylic Fridge Magnet",
+    "category": "Fridge Magnets",
+    "image": "",
+    "href": "/products/fridge-magnets/acrylic-fridge-magnet/",
+    "price": "\u20b965",
+    "priceNote": ""
+  },
+  {
+    "id": "satin-keychain",
+    "title": "Satin Keychain",
+    "category": "Keychains & Gifts",
+    "image": "",
+    "href": "/products/keychains-gifts/satin-keychain/",
+    "price": "\u20b915",
+    "priceNote": "MOQ 500"
+  },
+  {
+    "id": "wooden-keychain",
+    "title": "Wooden Keychain",
+    "category": "Keychains & Gifts",
+    "image": "",
+    "href": "/products/keychains-gifts/wooden-keychain/",
+    "price": "\u20b955",
+    "priceNote": "MOQ 50"
+  },
+  {
+    "id": "leather-keychain",
+    "title": "Leather Keychain",
+    "category": "Keychains & Gifts",
+    "image": "",
+    "href": "/products/keychains-gifts/leather-keychain/",
+    "price": "\u20b955",
+    "priceNote": ""
+  },
+  {
+    "id": "button-keychain",
+    "title": "Button Keychain",
+    "category": "Keychains & Gifts",
+    "image": "",
+    "href": "/products/keychains-gifts/button-keychain/",
+    "price": "\u20b935",
+    "priceNote": "MOQ 50"
+  },
+  {
+    "id": "acrylic-keychain",
+    "title": "Acrylic Keychain",
+    "category": "Keychains & Gifts",
+    "image": "",
+    "href": "/products/keychains-gifts/acrylic-keychain/",
+    "price": "\u20b945",
+    "priceNote": "MOQ 50"
+  },
+  {
+    "id": "mementoes",
+    "title": "Mementoes",
+    "category": "Keychains & Gifts",
+    "image": "",
+    "href": "/products/keychains-gifts/mementoes/",
+    "price": "\u20b9899",
+    "priceNote": ""
+  },
+  {
+    "id": "mug",
+    "title": "Mug",
+    "category": "Drinkware",
+    "image": "",
+    "href": "/products/drinkware/mug/",
+    "price": "\u20b9160",
+    "priceNote": ""
+  },
+  {
+    "id": "uv-bottle-500ml",
+    "title": "UV Bottle \u2014 500 ml",
+    "category": "Drinkware",
+    "image": "",
+    "href": "/products/drinkware/uv-bottle-500ml/",
+    "price": "\u20b9260",
+    "priceNote": ""
+  },
+  {
+    "id": "uv-bottle-750ml",
+    "title": "UV Bottle \u2014 750 ml",
+    "category": "Drinkware",
+    "image": "",
+    "href": "/products/drinkware/uv-bottle-750ml/",
+    "price": "\u20b9280",
+    "priceNote": ""
+  },
+  {
+    "id": "uv-bottle-1-litre",
+    "title": "UV Bottle \u2014 1 Litre",
+    "category": "Drinkware",
+    "image": "",
+    "href": "/products/drinkware/uv-bottle-1-litre/",
+    "price": "\u20b9320",
+    "priceNote": ""
+  },
+  {
+    "id": "diary",
+    "title": "Diary",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/diary/",
+    "price": "\u20b9150",
+    "priceNote": "MOQ 10"
+  },
+  {
+    "id": "metal-pen",
+    "title": "Custom Metal Pen",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/metal-pen/",
+    "price": "\u20b965",
+    "priceNote": "MOQ 50"
+  },
+  {
+    "id": "uv-stickers",
+    "title": "UV Stickers",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/uv-stickers/",
+    "price": "\u20b930",
+    "priceNote": ""
+  },
+  {
+    "id": "bookmark",
+    "title": "Bookmark",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/bookmark/",
+    "price": "\u20b94.50",
+    "priceNote": ""
+  },
+  {
+    "id": "leather-wrist-band",
+    "title": "Leather Wrist Band",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/leather-wrist-band/",
+    "price": "\u20b940",
+    "priceNote": ""
+  },
+  {
+    "id": "paper-wrist-band",
+    "title": "Paper Wrist Band",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/paper-wrist-band/",
+    "price": "\u20b95.50",
+    "priceNote": ""
+  },
+  {
+    "id": "fabric-wrist-band",
+    "title": "Fabric Wrist Band",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/fabric-wrist-band/",
+    "price": "\u20b98.50",
+    "priceNote": ""
+  },
+  {
+    "id": "button-badge",
+    "title": "Button Badge",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/button-badge/",
+    "price": "\u20b920 \u00b7 \u20b925",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "sticker-a5-custom-cut",
+    "title": "Custom-Cut Stickers \u2014 A5",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/sticker-a5-custom-cut/",
+    "price": "\u20b940",
+    "priceNote": "MOQ 100"
+  },
+  {
+    "id": "lanyard-tag",
+    "title": "Laneyard Tag",
+    "category": "Stickers, Badges & Stationery",
+    "image": "",
+    "href": "/products/stationery/lanyard-tag/",
+    "price": "\u20b935",
+    "priceNote": ""
+  },
+  {
+    "id": "miss-india-sachet",
+    "title": "Miss India Sachet",
+    "category": "Sachets & Sashes",
+    "image": "",
+    "href": "/products/sachets/miss-india-sachet/",
+    "price": "\u20b9160",
+    "priceNote": ""
+  },
+  {
+    "id": "tote-bag",
+    "title": "Tote Bag",
+    "category": "Bags & Accessories",
+    "image": "",
+    "href": "/products/bags-accessories/tote-bag/",
+    "price": "\u20b912.50 \u00b7 \u20b916.50 \u00b7 \u20b955 \u00b7 \u20b975 \u00b7 \u20b9125 \u00b7 \u20b9170",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "jute-bag",
+    "title": "Jute Bag",
+    "category": "Bags & Accessories",
+    "image": "",
+    "href": "/products/bags-accessories/jute-bag/",
+    "price": "\u20b960 \u00b7 \u20b990 \u00b7 \u20b9110 \u00b7 \u20b9160",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "jute-pouch",
+    "title": "Jute Pouches",
+    "category": "Bags & Accessories",
+    "image": "",
+    "href": "/products/bags-accessories/jute-pouch/",
+    "price": "\u20b98.50 \u00b7 \u20b912.50 \u00b7 \u20b914.50",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "backpack",
+    "title": "Backpack",
+    "category": "Bags & Accessories",
+    "image": "",
+    "href": "/products/bags-accessories/backpack/",
+    "price": "\u20b9430",
+    "priceNote": ""
+  },
+  {
+    "id": "laptop-bag",
+    "title": "Laptop Bag",
+    "category": "Bags & Accessories",
+    "image": "",
+    "href": "/products/bags-accessories/laptop-bag/",
+    "price": "\u20b9999",
+    "priceNote": ""
+  },
+  {
+    "id": "trolley",
+    "title": "Trolley",
+    "category": "Bags & Accessories",
+    "image": "",
+    "href": "/products/bags-accessories/trolley/",
+    "price": "\u20b93500",
+    "priceNote": ""
+  },
+  {
+    "id": "custom-flags",
+    "title": "Custom Flags",
+    "category": "Other Products",
+    "image": "",
+    "href": "/products/other-products/custom-flags/",
+    "price": "\u20b960 \u00b7 \u20b9400 \u00b7 \u20b9600",
+    "priceNote": "Exact option confirmed with your requirement."
+  },
+  {
+    "id": "umbrella",
+    "title": "Umbrella",
+    "category": "Other Products",
+    "image": "",
+    "href": "/products/other-products/umbrella/",
+    "price": "\u20b9600",
+    "priceNote": ""
+  },
+  {
+    "id": "mysuru-shalya",
+    "title": "Mysuru Shalya",
+    "category": "Other Products",
+    "image": "/brand/logo-white.png",
+    "href": "/products/other-products/mysuru-shalya/",
+    "price": "\u20b9110",
+    "priceNote": ""
+  }
+]

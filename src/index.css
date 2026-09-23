@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --brand-background: #fffaf2;
+  --brand-surface: #f2ede6;
+  --brand-surface-subtle: #f8f4ee;
+  --brand-primary: #1f1b64;
+  --brand-primary-hover: #17134f;
+  --brand-primary-soft: #e7e2ff;
+  --brand-signal: #ff6948;
+  --brand-signal-hover: #e55536;
+  --brand-signal-soft: #fde8e3;
+  --brand-signal-ink: #3f3650;
+  --brand-text: #191633;
+  --brand-muted: #575268;
+  --brand-border: #d9d1e2;
+  --brand-border-light: #ece7f2;
+  --brand-whatsapp: #26d07c;
+  --brand-mint: #c5efd4;
+  --brand-lilac: #d8c8ff;
+  --brand-marigold: #ffd84d;
+  --brand-sky: #b9dcff;
+  --brand-aqua: #65d9ca;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--brand-background);
+  color: var(--brand-text);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+}
+
+/* Custom scrollbars and marquee animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glass & elevated cards */
+.wc-card {
+  background: white;
+  border: 1px solid var(--brand-border);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wc-card:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(31, 27, 100, 0.08);
+}
+
