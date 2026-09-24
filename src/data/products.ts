@@ -1582,7 +1582,7 @@ export const ABOUT_SERVICES = [
 
 export const COMPANY_INFO = {
   "name": "Wild Collective",
-  "legalName": "Wild Collective",
+  "legalName": "RIVER TERN CORPORATION",
   "tagline": "Your Brand. Made Wearable.",
   "subTagline": "Custom Printing \u00b7 Merchandise \u00b7 Corporate Gifts",
   "address": "830/A, 11th Cross, Ramanuja Road, Fort Mohalla, Mysuru, Karnataka 570004",
@@ -1594,7 +1594,7 @@ export const COMPANY_INFO = {
     "contact@wildcollective.store",
     "shop@wildcollective.store"
   ],
-  "gstin": "29AAJCK3522F1ZK",
+  "gstin": "29COWPM7795E2ZT",
   "instagram": "https://www.instagram.com/wildcollective.store/",
   "website": "https://wildcollective.store/",
   "priceSource": "Wild Collective"

@@ -16,7 +16,7 @@ export const PRIVACY_POLICY: LegalDocument = {
   "intro": "How we handle information when you browse the Wild Collective website or contact us about a quotation.",
   "updated": "Last updated · 9 September 2026",
   "leadBefore": "This Privacy Policy applies to the Wild Collective website and related enquiries handled by",
-  "leadAfter": "(“we”, “us” or “our”). It explains what information may be received, why it is used, when it may be shared, and the choices available to you.",
+  "leadAfter": "(“Wild Collective”, “we”, “us” or “our”). It explains what information may be received, why it is used, when it may be shared, and the choices available to you.",
   "sections": [
     {
       "heading": "1. Information you choose to provide",
@@ -105,7 +105,7 @@ export const TERMS: LegalDocument = {
   "intro": "Important terms for using this website and discussing custom merchandise quotations with Wild Collective.",
   "updated": "Last updated · 9 September 2026",
   "leadBefore": "These Terms govern your use of the Wild Collective website and quotation enquiries with",
-  "leadAfter": "(“we”, “us” or “our”). By using the website or sending an enquiry, you agree to these Terms. A confirmed quotation, invoice, purchase order or written agreement may contain additional terms and will control if it expressly differs from this website page.",
+  "leadAfter": "(“Wild Collective”, “we”, “us” or “our”). By using the website or sending an enquiry, you agree to these Terms. A confirmed quotation, invoice, purchase order or written agreement may contain additional terms and will control if it expressly differs from this website page.",
   "sections": [
     {
       "heading": "1. Website purpose",
