@@ -97,7 +97,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onExploreApparel, on
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <figure className="relative rounded-lg overflow-hidden aspect-[16/9] bg-[#2f2f2f]">
           <img
-            src="/images/texa-production-unit.png"
+            src="/images/production-unit.png"
             alt="Wild Collective team printing, finishing and packing custom T-shirts inside the Mysuru production unit"
             className="absolute inset-0 w-full h-full object-cover"
           />

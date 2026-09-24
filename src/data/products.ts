@@ -1585,7 +1585,7 @@ export const COMPANY_INFO = {
   "legalName": "RIVER TERN CORPORATION",
   "tagline": "Your Brand. Made Wearable.",
   "subTagline": "Custom Printing \u00b7 Merchandise \u00b7 Corporate Gifts",
-  "address": "830/A, 11th Cross, Ramanuja Road, Fort Mohalla, Mysuru, Karnataka 570004",
+  "address": "No. 19, 2nd Main Road, 15th Cross, 3rd Stage, Gokulam, Mysuru (Mysore), Karnataka 570002",
   "phone": "+91 99454 21777",
   "phoneRaw": "+919945421777",
   "whatsapp": "+91 99454 21777",
