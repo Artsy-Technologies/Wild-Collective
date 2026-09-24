@@ -48,36 +48,36 @@ export const CustomPrintingGuide: React.FC<{ onExploreCatalogue: () => void }> =
   ];
 
   return (
-    <section id="custom-printing" className="py-16 sm:py-24 bg-[#f8f4ee]">
+    <section id="custom-printing" className="py-16 sm:py-24 bg-[#faf9f7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e7e2ff] text-xs font-black uppercase tracking-wider text-[#1f1b64] mb-3">
-            <Printer size={14} className="text-[#ff6948]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f1ebe3] text-xs font-black uppercase tracking-wider text-[#2f2f2f] mb-3">
+            <Printer size={14} className="text-[#a58c6d]" />
             <span>Wild Collective Custom Production</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-[#191633] tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-[#2f2f2f] tracking-tight">
             Your idea. Your identity. <br />
-            <span className="text-[#1f1b64]">Your merchandise.</span>
+            <span className="text-[#2f2f2f]">Your merchandise.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#575268] mt-3 leading-relaxed">
+          <p className="text-base sm:text-lg text-[#666666] mt-3 leading-relaxed">
             Start with the object, then shape how your identity should live on it. Wild Collective helps you move from a product choice to a clear customization and quotation conversation at honest factory prices.
           </p>
         </div>
 
         {/* The 4-Step Human Process ("From idea to order discussion") */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#d9d1e2] shadow-sm mb-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-6 border-b border-[#ece7f2]">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#dddddd] shadow-sm mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-6 border-b border-[#ececec]">
             <div>
-              <span className="text-xs uppercase font-extrabold tracking-widest text-[#ff6948]">
+              <span className="text-xs uppercase font-extrabold tracking-widest text-[#a58c6d]">
                 A Simple Human Process
               </span>
-              <h3 className="font-display font-black text-2xl sm:text-3xl text-[#191633] mt-1">
+              <h3 className="font-display font-black text-2xl sm:text-3xl text-[#2f2f2f] mt-1">
                 From idea to order discussion.
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-[#575268] max-w-md">
+            <p className="text-xs sm:text-sm text-[#666666] max-w-md">
               No cart. No confusing checkout. Just the right product information and a direct conversation with our Mysuru specialists.
             </p>
           </div>
@@ -85,21 +85,21 @@ export const CustomPrintingGuide: React.FC<{ onExploreCatalogue: () => void }> =
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st) => (
               <div key={st.num} className="relative space-y-2">
-                <span className="font-display text-4xl sm:text-5xl font-black text-[#e7e2ff]">
+                <span className="font-display text-4xl sm:text-5xl font-black text-[#f1ebe3]">
                   {st.num}
                 </span>
-                <h4 className="font-display font-black text-lg text-[#1f1b64]">
+                <h4 className="font-display font-black text-lg text-[#2f2f2f]">
                   {st.title}
                 </h4>
-                <p className="text-xs text-[#575268] leading-relaxed">
+                <p className="text-xs text-[#666666] leading-relaxed">
                   {st.desc}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-[#ece7f2] flex flex-wrap items-center justify-between gap-4">
-            <span className="text-xs font-bold text-[#575268]">
+          <div className="mt-10 pt-6 border-t border-[#ececec] flex flex-wrap items-center justify-between gap-4">
+            <span className="text-xs font-bold text-[#666666]">
               Ready to start your order discussion?
             </span>
             <a
@@ -119,10 +119,10 @@ export const CustomPrintingGuide: React.FC<{ onExploreCatalogue: () => void }> =
         {/* Custom Printing Techniques Explorer */}
         <div className="mb-16">
           <div className="mb-8">
-            <span className="text-xs uppercase font-extrabold tracking-widest text-[#ff6948]">
+            <span className="text-xs uppercase font-extrabold tracking-widest text-[#a58c6d]">
               Printing Methods
             </span>
-            <h3 className="font-display font-black text-2xl sm:text-3xl text-[#191633] mt-1">
+            <h3 className="font-display font-black text-2xl sm:text-3xl text-[#2f2f2f] mt-1">
               Select the right technique for your artwork.
             </h3>
           </div>
@@ -136,17 +136,17 @@ export const CustomPrintingGuide: React.FC<{ onExploreCatalogue: () => void }> =
                   onClick={() => setActiveTechnique(tech)}
                   className={`w-full text-left p-4 rounded-2xl border transition-all ${
                     activeTechnique.name === tech.name
-                      ? 'border-[#1f1b64] bg-[#1f1b64] text-white shadow-md'
-                      : 'border-[#d9d1e2] bg-white text-[#575268] hover:bg-[#f2ede6]'
+                      ? 'border-[#2f2f2f] bg-[#2f2f2f] text-white shadow-md'
+                      : 'border-[#dddddd] bg-white text-[#666666] hover:bg-[#f5f3ef]'
                   }`}
                 >
                   <span className={`text-[10px] font-black uppercase tracking-wider block ${
-                    activeTechnique.name === tech.name ? 'text-[#ffd84d]' : 'text-[#ff6948]'
+                    activeTechnique.name === tech.name ? 'text-[#d9bf94]' : 'text-[#a58c6d]'
                   }`}>
                     {tech.tag}
                   </span>
                   <h4 className={`font-display font-bold text-sm mt-0.5 ${
-                    activeTechnique.name === tech.name ? 'text-white' : 'text-[#191633]'
+                    activeTechnique.name === tech.name ? 'text-white' : 'text-[#2f2f2f]'
                   }`}>
                     {tech.name}
                   </h4>
@@ -155,41 +155,41 @@ export const CustomPrintingGuide: React.FC<{ onExploreCatalogue: () => void }> =
             </div>
 
             {/* Active Technique Showcase */}
-            <div className="lg:col-span-8 bg-white rounded-3xl p-8 border border-[#d9d1e2] shadow-sm space-y-6">
+            <div className="lg:col-span-8 bg-white rounded-3xl p-8 border border-[#dddddd] shadow-sm space-y-6">
               <div>
-                <span className="text-xs font-black uppercase px-3 py-1 rounded-full bg-[#e7e2ff] text-[#1f1b64]">
+                <span className="text-xs font-black uppercase px-3 py-1 rounded-full bg-[#f1ebe3] text-[#2f2f2f]">
                   {activeTechnique.tag}
                 </span>
-                <h3 className="font-display font-black text-2xl sm:text-3xl text-[#1f1b64] mt-2">
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-[#2f2f2f] mt-2">
                   {activeTechnique.name}
                 </h3>
-                <p className="text-sm text-[#575268] mt-3 leading-relaxed">
+                <p className="text-sm text-[#666666] mt-3 leading-relaxed">
                   {activeTechnique.description}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#ece7f2]">
-                <div className="bg-[#fffaf2] p-4 rounded-xl border border-[#d9d1e2]">
-                  <p className="text-[10px] uppercase font-bold text-[#8d889b]">Best Suited For:</p>
-                  <p className="text-xs font-semibold text-[#191633] mt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#ececec]">
+                <div className="bg-[#ffffff] p-4 rounded-xl border border-[#dddddd]">
+                  <p className="text-[10px] uppercase font-bold text-[#8f8f8f]">Best Suited For:</p>
+                  <p className="text-xs font-semibold text-[#2f2f2f] mt-1">
                     {activeTechnique.bestFor}
                   </p>
                 </div>
-                <div className="bg-[#fffaf2] p-4 rounded-xl border border-[#d9d1e2]">
-                  <p className="text-[10px] uppercase font-bold text-[#8d889b]">Durability & Longevity:</p>
-                  <p className="text-xs font-semibold text-[#191633] mt-1">
+                <div className="bg-[#ffffff] p-4 rounded-xl border border-[#dddddd]">
+                  <p className="text-[10px] uppercase font-bold text-[#8f8f8f]">Durability & Longevity:</p>
+                  <p className="text-xs font-semibold text-[#2f2f2f] mt-1">
                     {activeTechnique.durability}
                   </p>
                 </div>
               </div>
 
               <div className="pt-2 flex items-center justify-between">
-                <span className="text-xs text-[#575268]">
+                <span className="text-xs text-[#666666]">
                   Not sure which method fits your artwork? We recommend the best method for your budget.
                 </span>
                 <button
                   onClick={onExploreCatalogue}
-                  className="px-4 py-2 rounded-xl bg-[#1f1b64] hover:bg-[#17134f] text-white text-xs font-bold shrink-0"
+                  className="px-4 py-2 rounded-xl bg-[#2f2f2f] hover:bg-[#0a0a0a] text-white text-xs font-bold shrink-0"
                 >
                   Browse Products
                 </button>
@@ -199,20 +199,20 @@ export const CustomPrintingGuide: React.FC<{ onExploreCatalogue: () => void }> =
         </div>
 
         {/* Logo Placement Guide */}
-        <div className="bg-white rounded-3xl p-8 border border-[#d9d1e2]">
-          <h3 className="font-display font-black text-xl text-[#191633] mb-6">
+        <div className="bg-white rounded-3xl p-8 border border-[#dddddd]">
+          <h3 className="font-display font-black text-xl text-[#2f2f2f] mb-6">
             Recommended Branding Placements
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {placementGuides.map((guide) => (
-              <div key={guide.name} className="p-4 rounded-xl bg-[#fffaf2] border border-[#d9d1e2]">
-                <span className="text-[10px] font-black uppercase text-[#ff6948] bg-[#ffd1dc]/40 px-2 py-0.5 rounded">
+              <div key={guide.name} className="p-4 rounded-xl bg-[#ffffff] border border-[#dddddd]">
+                <span className="text-[10px] font-black uppercase text-[#a58c6d] bg-[#efe7dc]/40 px-2 py-0.5 rounded">
                   {guide.dim}
                 </span>
-                <h4 className="font-display font-bold text-sm text-[#1f1b64] mt-2">
+                <h4 className="font-display font-bold text-sm text-[#2f2f2f] mt-2">
                   {guide.name}
                 </h4>
-                <p className="text-xs text-[#575268] mt-1 leading-relaxed">
+                <p className="text-xs text-[#666666] mt-1 leading-relaxed">
                   {guide.desc}
                 </p>
               </div>

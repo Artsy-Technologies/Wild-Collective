@@ -55,7 +55,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fffaf2] text-[#191633] selection:bg-[#ff6948] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#ffffff] text-[#2f2f2f] selection:bg-[#a58c6d] selection:text-white">
       {/* Navigation Header */}
       <Navbar
         activeTab={activeTab}

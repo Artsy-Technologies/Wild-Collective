@@ -87,23 +87,23 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
       <div 
-        className="bg-[#fffaf2] w-full max-w-4xl rounded-3xl shadow-2xl border border-[#d9d1e2] overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-200"
+        className="bg-[#ffffff] w-full max-w-4xl rounded-3xl shadow-2xl border border-[#dddddd] overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
-        <div className="bg-[#f2ede6] px-6 py-4 border-b border-[#d9d1e2] flex items-center justify-between">
+        <div className="bg-[#f5f3ef] px-6 py-4 border-b border-[#dddddd] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#1f1b64] text-white">
+            <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#2f2f2f] text-white">
               {product.category}
             </span>
-            <span className="text-xs text-[#575268] font-medium hidden sm:inline">
+            <span className="text-xs text-[#666666] font-medium hidden sm:inline">
               Mysuru Custom Production
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white hover:bg-[#e7e2ff] flex items-center justify-center text-[#575268] hover:text-[#1f1b64] transition-colors border border-[#d9d1e2]"
+            className="w-9 h-9 rounded-full bg-white hover:bg-[#f1ebe3] flex items-center justify-center text-[#666666] hover:text-[#2f2f2f] transition-colors border border-[#dddddd]"
             aria-label="Close modal"
           >
             <X size={18} />
@@ -116,7 +116,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
             
             {/* Left: Product Image & Badges */}
             <div className="md:col-span-5 space-y-4">
-              <div className="relative bg-white rounded-2xl p-4 border border-[#d9d1e2] flex items-center justify-center h-72 sm:h-80 overflow-hidden shadow-sm">
+              <div className="relative bg-white rounded-2xl p-4 border border-[#dddddd] flex items-center justify-center h-72 sm:h-80 overflow-hidden shadow-sm">
                 {showShadePreview && mockupKind && selectedHex ? (
                   <MockupProduct kind={mockupKind} color={selectedHex} className="w-full h-full max-h-72 drop-shadow-lg" />
                 ) : (
@@ -130,25 +130,25 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                 )}
 
                 {selectedHex && (
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-white/95 text-[11px] font-bold text-[#191633] px-2.5 py-1 rounded-lg border border-[#d9d1e2] shadow-xs">
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-white/95 text-[11px] font-bold text-[#2f2f2f] px-2.5 py-1 rounded-lg border border-[#dddddd] shadow-xs">
                     <span className="w-3 h-3 rounded-full border border-black/15" style={{ backgroundColor: selectedHex }} />
                     <span>{selectedColor}</span>
                   </div>
                 )}
 
                 {mockupKind && selectedHex && (
-                  <div className="absolute bottom-3 right-3 flex bg-[#f2ede6] p-0.5 rounded-lg text-[10px] font-bold border border-[#d9d1e2]">
+                  <div className="absolute bottom-3 right-3 flex bg-[#f5f3ef] p-0.5 rounded-lg text-[10px] font-bold border border-[#dddddd]">
                     <button
                       type="button"
                       onClick={() => setShowShadePreview(false)}
-                      className={`px-2 py-1 rounded-md ${!showShadePreview ? 'bg-[#1f1b64] text-white' : 'text-[#575268]'}`}
+                      className={`px-2 py-1 rounded-md ${!showShadePreview ? 'bg-[#2f2f2f] text-white' : 'text-[#666666]'}`}
                     >
                       Photo
                     </button>
                     <button
                       type="button"
                       onClick={() => setShowShadePreview(true)}
-                      className={`px-2 py-1 rounded-md ${showShadePreview ? 'bg-[#1f1b64] text-white' : 'text-[#575268]'}`}
+                      className={`px-2 py-1 rounded-md ${showShadePreview ? 'bg-[#2f2f2f] text-white' : 'text-[#666666]'}`}
                     >
                       Shade Preview
                     </button>
@@ -156,7 +156,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                 )}
                 
                 {product.priceNote && (
-                  <div className="absolute top-3 left-3 bg-[#e7e2ff] text-[#1f1b64] text-[11px] font-extrabold px-2.5 py-1 rounded-lg">
+                  <div className="absolute top-3 left-3 bg-[#f1ebe3] text-[#2f2f2f] text-[11px] font-extrabold px-2.5 py-1 rounded-lg">
                     {product.priceNote}
                   </div>
                 )}
@@ -171,8 +171,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                       onClick={() => { setSelectedAngleIndex(idx); setShowShadePreview(false); }}
                       className={`text-xs px-3 py-1.5 rounded-lg border font-bold transition-all flex items-center gap-1.5 ${
                         selectedAngleIndex === idx
-                          ? 'bg-[#1f1b64] text-white border-[#1f1b64] shadow-xs'
-                          : 'bg-white text-[#575268] border-[#d9d1e2] hover:bg-[#f2ede6]'
+                          ? 'bg-[#2f2f2f] text-white border-[#2f2f2f] shadow-xs'
+                          : 'bg-white text-[#666666] border-[#dddddd] hover:bg-[#f5f3ef]'
                       }`}
                     >
                       <img
@@ -188,8 +188,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               )}
 
               {/* Quality & Production Guarantees */}
-              <div className="bg-white rounded-2xl p-4 border border-[#d9d1e2] space-y-2.5 text-xs text-[#575268]">
-                <div className="flex items-center gap-2 font-semibold text-[#191633]">
+              <div className="bg-white rounded-2xl p-4 border border-[#dddddd] space-y-2.5 text-xs text-[#666666]">
+                <div className="flex items-center gap-2 font-semibold text-[#2f2f2f]">
                   <CheckCircle2 size={15} className="text-[#26d07c]" />
                   <span>KNITTING STORY INDIA Quality Assured</span>
                 </div>
@@ -198,7 +198,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                   <span>Precision DTF, Screen Print & Computerized Embroidery</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock size={15} className="text-[#ff6948]" />
+                  <Clock size={15} className="text-[#a58c6d]" />
                   <span>Standard production: 3 - 6 business days</span>
                 </div>
               </div>
@@ -206,9 +206,9 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               {onOpenStudio && (
                 <button
                   onClick={() => { onClose(); onOpenStudio(); }}
-                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#1f1b64] to-[#2b2588] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:opacity-95 transition-opacity"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#2f2f2f] to-[#4a4a4a] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:opacity-95 transition-opacity"
                 >
-                  <Sparkles size={14} className="text-[#ffd84d]" />
+                  <Sparkles size={14} className="text-[#d9bf94]" />
                   <span>Test Logo in Live Merch Studio</span>
                 </button>
               )}
@@ -217,18 +217,18 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
             {/* Right: Specifications & Quote Configuration */}
             <div className="md:col-span-7 space-y-6">
               <div>
-                <h2 className="font-display text-2xl sm:text-3xl font-black text-[#191633]">
+                <h2 className="font-display text-2xl sm:text-3xl font-black text-[#2f2f2f]">
                   {product.title}
                 </h2>
                 <div className="mt-2 flex flex-wrap items-baseline gap-2">
-                  <span className="text-xs uppercase font-extrabold text-[#575268]">
+                  <span className="text-xs uppercase font-extrabold text-[#666666]">
                     Available Price Options:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {priceParts.map((pr, idx) => (
                       <span 
                         key={idx} 
-                        className="font-display font-extrabold text-base sm:text-lg text-[#1f1b64] bg-[#e7e2ff]/60 px-2 py-0.5 rounded-md"
+                        className="font-display font-extrabold text-base sm:text-lg text-[#2f2f2f] bg-[#f1ebe3]/60 px-2 py-0.5 rounded-md"
                       >
                         {pr}
                       </span>
@@ -236,11 +236,11 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                   </div>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-[10px] font-bold text-[#0d5930] bg-[#c5efd4] px-2 py-0.5 rounded-full inline-flex items-center gap-1">
+                  <span className="text-[10px] font-bold text-[#4d6438] bg-[#e4ead9] px-2 py-0.5 rounded-full inline-flex items-center gap-1">
                     <span>✓</span> Verified Direct Factory Prices
                   </span>
                 </div>
-                <p className="text-xs text-[#8d889b] mt-1">
+                <p className="text-xs text-[#8f8f8f] mt-1">
                   *Exact price option confirmed based on chosen GSM, quantity slab, and branding complexity.
                 </p>
               </div>
@@ -248,8 +248,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               {/* Material / Fabric Selector */}
               {product.fabrics && product.fabrics.length > 0 && (
                 <div className="space-y-2">
-                  <label className="text-xs font-extrabold uppercase tracking-wider text-[#575268] flex items-center gap-1.5">
-                    <Layers size={14} className="text-[#ff6948]" />
+                  <label className="text-xs font-extrabold uppercase tracking-wider text-[#666666] flex items-center gap-1.5">
+                    <Layers size={14} className="text-[#a58c6d]" />
                     <span>Fabric / Base Material</span>
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -260,8 +260,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                         onClick={() => setSelectedFabric(f)}
                         className={`text-left text-xs p-2.5 rounded-xl border transition-all ${
                           selectedFabric === f
-                            ? 'border-[#1f1b64] bg-[#e7e2ff]/40 text-[#1f1b64] font-bold shadow-xs'
-                            : 'border-[#d9d1e2] bg-white text-[#575268] hover:border-[#8d889b]'
+                            ? 'border-[#2f2f2f] bg-[#f1ebe3]/40 text-[#2f2f2f] font-bold shadow-xs'
+                            : 'border-[#dddddd] bg-white text-[#666666] hover:border-[#8f8f8f]'
                         }`}
                       >
                         {f}
@@ -274,8 +274,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               {/* Print / Customization Technique */}
               {product.printTypes && product.printTypes.length > 0 && (
                 <div className="space-y-2">
-                  <label className="text-xs font-extrabold uppercase tracking-wider text-[#575268] flex items-center gap-1.5">
-                    <Printer size={14} className="text-[#ff6948]" />
+                  <label className="text-xs font-extrabold uppercase tracking-wider text-[#666666] flex items-center gap-1.5">
+                    <Printer size={14} className="text-[#a58c6d]" />
                     <span>Customization Technique</span>
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -286,8 +286,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                         onClick={() => setSelectedPrint(pt)}
                         className={`text-xs px-3 py-1.5 rounded-lg border transition-all ${
                           selectedPrint === pt
-                            ? 'border-[#1f1b64] bg-[#1f1b64] text-white font-bold'
-                            : 'border-[#d9d1e2] bg-white text-[#575268] hover:border-[#1f1b64]'
+                            ? 'border-[#2f2f2f] bg-[#2f2f2f] text-white font-bold'
+                            : 'border-[#dddddd] bg-white text-[#666666] hover:border-[#2f2f2f]'
                         }`}
                       >
                         {pt}
@@ -301,11 +301,11 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               {product.colors && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-extrabold uppercase tracking-wider text-[#575268] flex items-center gap-1.5">
-                      <Palette size={14} className="text-[#ff6948]" />
+                    <span className="font-extrabold uppercase tracking-wider text-[#666666] flex items-center gap-1.5">
+                      <Palette size={14} className="text-[#a58c6d]" />
                       <span>Preferred Shade</span>
                     </span>
-                    <span className="font-bold text-[#1f1b64]">{selectedColor}</span>
+                    <span className="font-bold text-[#2f2f2f]">{selectedColor}</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {product.colors.map((c) => (
@@ -315,8 +315,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                         onClick={() => { setSelectedColor(c); setShowShadePreview(true); }}
                         className={`inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border transition-all ${
                           selectedColor === c
-                            ? 'border-[#ff6948] bg-[#ff6948] text-white font-bold'
-                            : 'border-[#d9d1e2] bg-white text-[#575268] hover:bg-[#f2ede6]'
+                            ? 'border-[#a58c6d] bg-[#a58c6d] text-white font-bold'
+                            : 'border-[#dddddd] bg-white text-[#666666] hover:bg-[#f5f3ef]'
                         }`}
                       >
                         {SHADE_HEX[c] && (
@@ -330,16 +330,16 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               )}
 
               {/* Quantity Slab Selector & Custom Stepper */}
-              <div className="space-y-3 pt-2 border-t border-[#d9d1e2]">
+              <div className="space-y-3 pt-2 border-t border-[#dddddd]">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-extrabold uppercase tracking-wider text-[#575268]">
+                  <label className="text-xs font-extrabold uppercase tracking-wider text-[#666666]">
                     Estimated Order Quantity
                   </label>
                   <div className="flex items-center gap-1.5">
                     <button
                       type="button"
                       onClick={() => setQuantity(Math.max(10, quantity - 10))}
-                      className="w-7 h-7 rounded-lg bg-white border border-[#d9d1e2] text-[#191633] font-black text-sm flex items-center justify-center hover:bg-[#e7e2ff]"
+                      className="w-7 h-7 rounded-lg bg-white border border-[#dddddd] text-[#2f2f2f] font-black text-sm flex items-center justify-center hover:bg-[#f1ebe3]"
                     >
                       -
                     </button>
@@ -349,16 +349,16 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                       max="10000"
                       value={quantity}
                       onChange={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1))}
-                      className="w-16 text-center font-display font-black text-base text-[#1f1b64] py-1 border border-[#d9d1e2] rounded-lg bg-white focus:outline-none focus:border-[#1f1b64]"
+                      className="w-16 text-center font-display font-black text-base text-[#2f2f2f] py-1 border border-[#dddddd] rounded-lg bg-white focus:outline-none focus:border-[#2f2f2f]"
                     />
                     <button
                       type="button"
                       onClick={() => setQuantity(quantity + 10)}
-                      className="w-7 h-7 rounded-lg bg-white border border-[#d9d1e2] text-[#191633] font-black text-sm flex items-center justify-center hover:bg-[#e7e2ff]"
+                      className="w-7 h-7 rounded-lg bg-white border border-[#dddddd] text-[#2f2f2f] font-black text-sm flex items-center justify-center hover:bg-[#f1ebe3]"
                     >
                       +
                     </button>
-                    <span className="text-xs font-bold text-[#575268] ml-1">units</span>
+                    <span className="text-xs font-bold text-[#666666] ml-1">units</span>
                   </div>
                 </div>
 
@@ -371,8 +371,8 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                       onClick={() => setQuantity(qty)}
                       className={`flex-1 py-1.5 rounded-lg text-xs font-bold border transition-colors ${
                         quantity === qty
-                          ? 'bg-[#1f1b64] text-white border-[#1f1b64]'
-                          : 'bg-white text-[#575268] border-[#d9d1e2] hover:bg-[#f2ede6]'
+                          ? 'bg-[#2f2f2f] text-white border-[#2f2f2f]'
+                          : 'bg-white text-[#666666] border-[#dddddd] hover:bg-[#f5f3ef]'
                       }`}
                     >
                       {qty}
@@ -381,23 +381,23 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                 </div>
 
                 {/* Dynamic Price Estimate Card */}
-                <div className="bg-[#fffaf2] p-3 rounded-2xl border border-[#d9d1e2] space-y-1.5">
+                <div className="bg-[#ffffff] p-3 rounded-2xl border border-[#dddddd] space-y-1.5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-[#575268]">Estimated Rate per Piece:</span>
+                    <span className="text-[#666666]">Estimated Rate per Piece:</span>
                     <div className="flex items-center gap-1.5">
                       {discountPercent > 0 && (
-                        <span className="text-[11px] text-[#8d889b] line-through">₹{basePriceNum}</span>
+                        <span className="text-[11px] text-[#8f8f8f] line-through">₹{basePriceNum}</span>
                       )}
-                      <span className="font-display font-black text-sm text-[#1f1b64]">₹{estimatedUnitPrice}</span>
+                      <span className="font-display font-black text-sm text-[#2f2f2f]">₹{estimatedUnitPrice}</span>
                       {discountPercent > 0 && (
-                        <span className="text-[9px] font-bold text-[#0d5930] bg-[#c5efd4] px-1.5 py-0.2 rounded">
+                        <span className="text-[9px] font-bold text-[#4d6438] bg-[#e4ead9] px-1.5 py-0.2 rounded">
                           {discountPercent}% OFF
                         </span>
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#ece7f2]">
-                    <span className="font-bold text-[#191633]">Estimated Order Total ({quantity} pcs):</span>
+                  <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#ececec]">
+                    <span className="font-bold text-[#2f2f2f]">Estimated Order Total ({quantity} pcs):</span>
                     <span className="font-display font-black text-base text-[#26d07c]">
                       ₹{estimatedOrderTotal.toLocaleString('en-IN')}
                     </span>
@@ -407,7 +407,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
 
               {/* Notes Input */}
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#575268]">
+                <label className="text-xs font-semibold text-[#666666]">
                   Additional requirement / logo placement notes (optional):
                 </label>
                 <input
@@ -415,7 +415,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                   placeholder="e.g. Need company logo on front chest, deliver in Mysuru by next Friday..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full text-xs p-2.5 rounded-xl border border-[#d9d1e2] bg-white text-[#191633] placeholder-[#8d889b] focus:outline-none focus:border-[#1f1b64]"
+                  className="w-full text-xs p-2.5 rounded-xl border border-[#dddddd] bg-white text-[#2f2f2f] placeholder-[#8f8f8f] focus:outline-none focus:border-[#2f2f2f]"
                 />
               </div>
 
@@ -431,11 +431,11 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                   <span>Send Quotation Request on WhatsApp</span>
                 </a>
 
-                <div className="flex items-center justify-between text-xs text-[#575268] pt-1">
+                <div className="flex items-center justify-between text-xs text-[#666666] pt-1">
                   <span>No payment required now. Quote confirmed on WhatsApp.</span>
                   <a 
                     href={`tel:${COMPANY_INFO.phoneRaw}`}
-                    className="font-bold text-[#1f1b64] hover:underline flex items-center gap-1"
+                    className="font-bold text-[#2f2f2f] hover:underline flex items-center gap-1"
                   >
                     <PhoneCall size={12} />
                     <span>Call Support</span>

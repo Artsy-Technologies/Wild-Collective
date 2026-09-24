@@ -21,7 +21,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
   const [brandModalOpen, setBrandModalOpen] = useState(false);
   return (
-    <footer className="bg-[#1f1b64] text-[#fffaf2] pt-16 pb-12 border-t border-[#17134f]">
+    <footer className="bg-[#2f2f2f] text-[#ffffff] pt-16 pb-12 border-t border-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
 
           {/* Col 2: Categories */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#ffd84d]">
+            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#d9bf94]">
               Product Spectrum
             </h4>
             <ul className="space-y-2 text-xs text-slate-300">
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
 
           {/* Col 3: Company & Services */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#ffd84d]">
+            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#d9bf94]">
               Company
             </h4>
             <ul className="space-y-2 text-xs text-slate-300">
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
               <li>
                 <button 
                   onClick={() => setBrandModalOpen(true)} 
-                  className="hover:text-[#ffd84d] hover:underline flex items-center gap-1 font-semibold text-[#ffd84d]"
+                  className="hover:text-[#d9bf94] hover:underline flex items-center gap-1 font-semibold text-[#d9bf94]"
                 >
                   <Sparkles size={12} />
                   <span>Exact Brand Logo & Files</span>
@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
 
           {/* Col 4: Direct Contacts */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#ffd84d]">
+            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#d9bf94]">
               Direct Contact
             </h4>
             
@@ -139,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) 
               href={`tel:${COMPANY_INFO.phoneRaw}`}
               className="p-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs flex items-center gap-2 transition-colors border border-white/10"
             >
-              <PhoneCall size={16} className="text-[#ffd84d]" />
+              <PhoneCall size={16} className="text-[#d9bf94]" />
               <span>Phone: {COMPANY_INFO.phone}</span>
             </a>
 

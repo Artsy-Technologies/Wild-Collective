@@ -69,20 +69,20 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f2ede6] text-xs font-black uppercase tracking-wider text-[#ff6948] mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5f3ef] text-xs font-black uppercase tracking-wider text-[#a58c6d] mb-2">
               <Sparkles size={13} />
               <span>Wild Collective Catalogue · Direct Factory Prices</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-[#191633] tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-[#2f2f2f] tracking-tight">
               Start with an everyday favourite.
             </h2>
-            <p className="text-sm sm:text-base text-[#575268] mt-1 max-w-xl">
+            <p className="text-sm sm:text-base text-[#666666] mt-1 max-w-xl">
               Useful pieces, transparent factory prices, and a direct route to the right quotation. Select any item to view specifications or request an instant WhatsApp quote.
             </p>
           </div>
 
-          <div className="text-xs font-bold text-[#575268] bg-white px-3.5 py-2 rounded-xl border border-[#d9d1e2] shrink-0">
-            Showing <span className="text-[#1f1b64] font-black">{filteredProducts.length}</span> of {PRODUCTS.length} products
+          <div className="text-xs font-bold text-[#666666] bg-white px-3.5 py-2 rounded-xl border border-[#dddddd] shrink-0">
+            Showing <span className="text-[#2f2f2f] font-black">{filteredProducts.length}</span> of {PRODUCTS.length} products
           </div>
         </div>
 
@@ -91,18 +91,18 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           {/* Search bar & Sort selector */}
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <div className="relative w-full sm:flex-1">
-              <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#575268]" />
+              <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666666]" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Filter by name, fabric, or keyword (e.g. T-Shirt, Bottle, Bag, Cap)..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#d9d1e2] bg-white text-sm text-[#191633] placeholder-[#8d889b] focus:outline-none focus:border-[#1f1b64] shadow-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#dddddd] bg-white text-sm text-[#2f2f2f] placeholder-[#8f8f8f] focus:outline-none focus:border-[#2f2f2f] shadow-xs"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#8d889b] hover:text-[#191633]"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#8f8f8f] hover:text-[#2f2f2f]"
                 >
                   Clear
                 </button>
@@ -110,13 +110,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </div>
 
             <div className="flex items-center gap-2 w-full sm:w-auto">
-              <label htmlFor="sort-select" className="text-xs font-bold text-[#575268] shrink-0">Sort:</label>
+              <label htmlFor="sort-select" className="text-xs font-bold text-[#666666] shrink-0">Sort:</label>
               <select
                 id="sort-select"
                 aria-label="Sort products by"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full sm:w-44 py-2.5 px-3 rounded-xl border border-[#d9d1e2] bg-white text-xs font-bold text-[#1f1b64] focus:outline-none focus:border-[#1f1b64] shadow-xs cursor-pointer"
+                className="w-full sm:w-44 py-2.5 px-3 rounded-xl border border-[#dddddd] bg-white text-xs font-bold text-[#2f2f2f] focus:outline-none focus:border-[#2f2f2f] shadow-xs cursor-pointer"
               >
                 <option value="default">Default Order</option>
                 <option value="price-low">Price: Low to High</option>
@@ -135,11 +135,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   onClick={() => onSelectCategory(cat)}
                   className={`text-xs font-extrabold px-3.5 py-2 rounded-xl whitespace-nowrap transition-all duration-150 shrink-0 flex items-center gap-1.5 ${
                     isSelected
-                      ? 'bg-[#1f1b64] text-white shadow-sm'
-                      : 'bg-white border border-[#d9d1e2] text-[#575268] hover:text-[#1f1b64] hover:bg-[#f2ede6]'
+                      ? 'bg-[#2f2f2f] text-white shadow-sm'
+                      : 'bg-white border border-[#dddddd] text-[#666666] hover:text-[#2f2f2f] hover:bg-[#f5f3ef]'
                   }`}
                 >
-                  {cat === 'Golf T-Shirts' && <span className="text-[#ffd84d]">✦</span>}
+                  {cat === 'Golf T-Shirts' && <span className="text-[#d9bf94]">✦</span>}
                   <span>{cat}</span>
                 </button>
               );
@@ -149,9 +149,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
         {/* Special Banner if Golf T-Shirts category is selected */}
         {selectedCategory === 'Golf T-Shirts' && (
-          <div className="mb-8 p-6 rounded-2xl bg-gradient-to-r from-[#1f1b64] via-[#241f77] to-[#17134f] text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg border border-[#e7e2ff]/20">
+          <div className="mb-8 p-6 rounded-2xl bg-gradient-to-r from-[#2f2f2f] via-[#3a3a3a] to-[#0a0a0a] text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg border border-[#f1ebe3]/20">
             <div>
-              <span className="text-[11px] font-black uppercase tracking-widest text-[#65d9ca]">
+              <span className="text-[11px] font-black uppercase tracking-widest text-[#b9a78e]">
                 Dedicated Showcase
               </span>
               <h3 className="font-display text-2xl font-black mt-1">
@@ -163,7 +163,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </div>
             <button
               onClick={onExploreGolf}
-              className="px-5 py-2.5 rounded-xl bg-[#65d9ca] hover:bg-[#52c8b8] text-[#053831] font-black text-xs shrink-0 flex items-center gap-1.5 transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-[#b9a78e] hover:bg-[#52c8b8] text-[#053831] font-black text-xs shrink-0 flex items-center gap-1.5 transition-colors"
             >
               <span>View 7 Swing Style Prints</span>
               <ArrowUpRight size={15} />
@@ -188,7 +188,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   {/* Top Image Box */}
                   <div
                     onClick={() => onOpenProductDetail(p)}
-                    className="relative h-56 bg-gradient-to-b from-[#fffaf2] to-[#f8f4ee] flex items-center justify-center p-3 cursor-pointer overflow-hidden"
+                    className="relative h-56 bg-gradient-to-b from-[#ffffff] to-[#faf9f7] flex items-center justify-center p-3 cursor-pointer overflow-hidden"
                   >
                     <ProductVisual
                       productId={p.id}
@@ -200,12 +200,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
                     {/* Price Note / MOQ pill */}
                     {p.priceNote && (
-                      <span className="absolute top-2.5 left-2.5 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-[#e7e2ff] text-[#1f1b64] tracking-wide">
+                      <span className="absolute top-2.5 left-2.5 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-[#f1ebe3] text-[#2f2f2f] tracking-wide">
                         {p.priceNote.includes('MOQ') ? p.priceNote : 'Custom Option'}
                       </span>
                     )}
 
-                    <span className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-[#575268] group-hover:text-[#1f1b64] opacity-0 group-hover:opacity-100 transition-opacity shadow-xs">
+                    <span className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-[#666666] group-hover:text-[#2f2f2f] opacity-0 group-hover:opacity-100 transition-opacity shadow-xs">
                       <ArrowUpRight size={15} />
                     </span>
                   </div>
@@ -213,12 +213,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   {/* Card Body */}
                   <div className="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#ff6948]">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#a58c6d]">
                         {p.category}
                       </span>
                       <h3
                         onClick={() => onOpenProductDetail(p)}
-                        className="font-display font-black text-lg text-[#191633] group-hover:text-[#1f1b64] transition-colors cursor-pointer mt-0.5 line-clamp-1"
+                        className="font-display font-black text-lg text-[#2f2f2f] group-hover:text-[#2f2f2f] transition-colors cursor-pointer mt-0.5 line-clamp-1"
                         title={p.title}
                       >
                         {p.title}
@@ -227,25 +227,25 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       {/* Pricing */}
                       <div className="mt-3">
                         <div className="flex items-center justify-between">
-                          <p className="text-[10px] uppercase font-bold text-[#8d889b]">Price Options</p>
-                          <span className="text-[9px] font-bold text-[#0d5930] bg-[#c5efd4] px-1.5 py-0.2 rounded">
+                          <p className="text-[10px] uppercase font-bold text-[#8f8f8f]">Price Options</p>
+                          <span className="text-[9px] font-bold text-[#4d6438] bg-[#e4ead9] px-1.5 py-0.2 rounded">
                             Factory rates
                           </span>
                         </div>
-                        <p className="font-display font-extrabold text-base text-[#1f1b64] mt-0.5">
+                        <p className="font-display font-extrabold text-base text-[#2f2f2f] mt-0.5">
                           {p.price || 'Pricing on request'}
                         </p>
-                        <p className="text-[11px] text-[#575268] mt-0.5">
+                        <p className="text-[11px] text-[#666666] mt-0.5">
                           Exact option confirmed with your requirement.
                         </p>
                       </div>
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="mt-5 pt-4 border-t border-[#ece7f2] flex items-center justify-between gap-2">
+                    <div className="mt-5 pt-4 border-t border-[#ececec] flex items-center justify-between gap-2">
                       <button
                         onClick={() => onOpenProductDetail(p)}
-                        className="text-xs font-bold text-[#1f1b64] hover:text-[#ff6948] flex items-center gap-1 transition-colors"
+                        className="text-xs font-bold text-[#2f2f2f] hover:text-[#a58c6d] flex items-center gap-1 transition-colors"
                       >
                         <span>View product</span>
                         <ArrowUpRight size={14} />
@@ -255,7 +255,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                         href={quoteUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-9 h-9 rounded-xl bg-[#26d07c]/15 hover:bg-[#26d07c] text-[#0d5930] hover:text-[#0d3f23] flex items-center justify-center transition-colors shadow-xs"
+                        className="w-9 h-9 rounded-xl bg-[#26d07c]/15 hover:bg-[#26d07c] text-[#4d6438] hover:text-[#0d3f23] flex items-center justify-center transition-colors shadow-xs"
                         title={`Request WhatsApp Quote for ${p.title}`}
                         aria-label={`Request WhatsApp quote for ${p.title}`}
                       >
@@ -268,16 +268,16 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             })}
           </div>
         ) : (
-          <div className="text-center py-16 bg-white rounded-2xl border border-[#d9d1e2] p-8">
-            <p className="font-display text-lg font-bold text-[#191633]">
+          <div className="text-center py-16 bg-white rounded-2xl border border-[#dddddd] p-8">
+            <p className="font-display text-lg font-bold text-[#2f2f2f]">
               No products found matching &quot;{searchQuery}&quot; in {selectedCategory}
             </p>
-            <p className="text-xs text-[#575268] mt-1">
+            <p className="text-xs text-[#666666] mt-1">
               Try searching with another keyword or resetting the category filter.
             </p>
             <button
               onClick={() => { setSearchQuery(''); onSelectCategory('All Products'); }}
-              className="mt-4 px-4 py-2 rounded-xl bg-[#1f1b64] text-white text-xs font-bold"
+              className="mt-4 px-4 py-2 rounded-xl bg-[#2f2f2f] text-white text-xs font-bold"
             >
               Reset Filters
             </button>

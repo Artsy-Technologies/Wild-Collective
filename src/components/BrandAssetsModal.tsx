@@ -55,30 +55,30 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/75 backdrop-blur-sm animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-4xl bg-[#fffaf2] rounded-3xl shadow-2xl border border-[#d9d1e2] overflow-hidden my-auto"
+        className="relative w-full max-w-4xl bg-[#ffffff] rounded-3xl shadow-2xl border border-[#dddddd] overflow-hidden my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-[#ece7f2] bg-[#f8f4ed]">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-[#ececec] bg-[#f8f4ed]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1f1b64] text-white flex items-center justify-center shadow-sm">
-              <Sparkles size={20} className="text-[#ffd84d]" />
+            <div className="w-10 h-10 rounded-xl bg-[#2f2f2f] text-white flex items-center justify-center shadow-sm">
+              <Sparkles size={20} className="text-[#d9bf94]" />
             </div>
             <div>
-              <h3 className="font-display text-xl font-black text-[#191633] flex items-center gap-2">
+              <h3 className="font-display text-xl font-black text-[#2f2f2f] flex items-center gap-2">
                 The Wild Collective · Official Brand Assets
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#e7e2ff] text-[#1f1b64] border border-[#d9d1e2]">
+                <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#f1ebe3] text-[#2f2f2f] border border-[#dddddd]">
                   Exact Identity
                 </span>
               </h3>
-              <p className="text-xs text-[#575268]">
+              <p className="text-xs text-[#666666]">
                 Authentic elephant and roaring Bengal tiger emblem with geometric COLLECTIVE wordmark.
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="w-10 h-10 rounded-full bg-white border border-[#d9d1e2] flex items-center justify-center text-[#575268] hover:text-[#191633] hover:bg-[#f2ede6] transition-colors"
+            className="w-10 h-10 rounded-full bg-white border border-[#dddddd] flex items-center justify-center text-[#666666] hover:text-[#2f2f2f] hover:bg-[#f5f3ef] transition-colors"
           >
             <X size={20} />
           </button>
@@ -89,15 +89,15 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
           {/* Main Interactive Stage */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#575268] flex items-center gap-1.5">
-                <Eye size={14} className="text-[#ff6948]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#666666] flex items-center gap-1.5">
+                <Eye size={14} className="text-[#a58c6d]" />
                 Live Logo Preview Stage
               </span>
-              <div className="flex items-center gap-1.5 p-1 bg-[#ece7f2] rounded-xl text-xs font-semibold">
+              <div className="flex items-center gap-1.5 p-1 bg-[#ececec] rounded-xl text-xs font-semibold">
                 <button
                   onClick={() => setBgPreview('white')}
                   className={`px-3 py-1 rounded-lg transition-colors ${
-                    bgPreview === 'white' ? 'bg-white text-[#191633] shadow-xs' : 'text-[#575268] hover:text-[#191633]'
+                    bgPreview === 'white' ? 'bg-white text-[#2f2f2f] shadow-xs' : 'text-[#666666] hover:text-[#2f2f2f]'
                   }`}
                 >
                   Pure White
@@ -105,7 +105,7 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
                 <button
                   onClick={() => setBgPreview('dark')}
                   className={`px-3 py-1 rounded-lg transition-colors ${
-                    bgPreview === 'dark' ? 'bg-[#191633] text-white shadow-xs' : 'text-[#575268] hover:text-[#191633]'
+                    bgPreview === 'dark' ? 'bg-[#2f2f2f] text-white shadow-xs' : 'text-[#666666] hover:text-[#2f2f2f]'
                   }`}
                 >
                   Deep Navy
@@ -113,7 +113,7 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
                 <button
                   onClick={() => setBgPreview('grid')}
                   className={`px-3 py-1 rounded-lg transition-colors ${
-                    bgPreview === 'grid' ? 'bg-white text-[#191633] shadow-xs' : 'text-[#575268] hover:text-[#191633]'
+                    bgPreview === 'grid' ? 'bg-white text-[#2f2f2f] shadow-xs' : 'text-[#666666] hover:text-[#2f2f2f]'
                   }`}
                 >
                   Transparency Grid
@@ -122,7 +122,7 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
             </div>
 
             <div 
-              className={`w-full rounded-2xl border border-[#d9d1e2] p-8 sm:p-12 flex flex-col items-center justify-center min-h-[220px] transition-colors relative overflow-hidden ${
+              className={`w-full rounded-2xl border border-[#dddddd] p-8 sm:p-12 flex flex-col items-center justify-center min-h-[220px] transition-colors relative overflow-hidden ${
                 bgPreview === 'white' 
                   ? 'bg-white' 
                   : bgPreview === 'dark' 
@@ -139,7 +139,7 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
               </div>
               <div className="mt-4 text-center">
                 <span className={`text-[11px] font-bold tracking-widest uppercase ${
-                  bgPreview === 'dark' ? 'text-white/60' : 'text-[#8d889b]'
+                  bgPreview === 'dark' ? 'text-white/60' : 'text-[#8f8f8f]'
                 }`}>
                   Mysuru Apparel & Gifting House · Direct Manufacturer Rates
                 </span>
@@ -149,7 +149,7 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
 
           {/* Download Notification */}
           {downloadSuccess && (
-            <div className="p-3 bg-[#e7f7ed] border border-[#a3e6be] rounded-xl flex items-center gap-2.5 text-xs font-bold text-[#0d5930] animate-in fade-in">
+            <div className="p-3 bg-[#e7f7ed] border border-[#a3e6be] rounded-xl flex items-center gap-2.5 text-xs font-bold text-[#4d6438] animate-in fade-in">
               <Check size={16} />
               Downloaded &quot;{downloadSuccess}&quot; to your device!
             </div>
@@ -157,36 +157,36 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
 
           {/* Download Grid */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-[#191633] flex items-center gap-2">
-              <Download size={16} className="text-[#1f1b64]" />
+            <h4 className="text-sm font-bold text-[#2f2f2f] flex items-center gap-2">
+              <Download size={16} className="text-[#2f2f2f]" />
               Official Downloadable Files
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {assetFiles.map((file) => (
                 <div
                   key={file.filename}
-                  className="p-4 rounded-2xl bg-white border border-[#d9d1e2] hover:border-[#1f1b64] hover:shadow-md transition-all flex flex-col justify-between space-y-3 group"
+                  className="p-4 rounded-2xl bg-white border border-[#dddddd] hover:border-[#2f2f2f] hover:shadow-md transition-all flex flex-col justify-between space-y-3 group"
                 >
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black px-2 py-0.5 rounded-md bg-[#e7e2ff] text-[#1f1b64]">
+                      <span className="text-xs font-black px-2 py-0.5 rounded-md bg-[#f1ebe3] text-[#2f2f2f]">
                         {file.type}
                       </span>
-                      <span className="text-[10px] font-bold text-[#ff6948] bg-[#ff6948]/10 px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold text-[#a58c6d] bg-[#a58c6d]/10 px-2 py-0.5 rounded-full">
                         {file.badge}
                       </span>
                     </div>
-                    <div className="font-bold text-sm text-[#191633] group-hover:text-[#1f1b64] transition-colors">
+                    <div className="font-bold text-sm text-[#2f2f2f] group-hover:text-[#2f2f2f] transition-colors">
                       {file.title}
                     </div>
-                    <div className="text-xs text-[#575268] leading-relaxed">
+                    <div className="text-xs text-[#666666] leading-relaxed">
                       {file.desc}
                     </div>
                   </div>
 
                   <button
                     onClick={() => handleDownload(file.filename, file.path)}
-                    className="w-full py-2 px-3 rounded-xl bg-[#fffaf2] hover:bg-[#1f1b64] text-[#1f1b64] hover:text-white border border-[#d9d1e2] hover:border-[#1f1b64] text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-xs"
+                    className="w-full py-2 px-3 rounded-xl bg-[#ffffff] hover:bg-[#2f2f2f] text-[#2f2f2f] hover:text-white border border-[#dddddd] hover:border-[#2f2f2f] text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-xs"
                   >
                     <Download size={14} />
                     Download {file.filename}
@@ -197,22 +197,22 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
           </div>
 
           {/* Design Anatomy & Specs */}
-          <div className="bg-[#f2ede6] rounded-2xl p-5 border border-[#d9d1e2] space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#191633] flex items-center gap-2">
-              <ShieldCheck size={16} className="text-[#0d5930]" />
+          <div className="bg-[#f5f3ef] rounded-2xl p-5 border border-[#dddddd] space-y-3">
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#2f2f2f] flex items-center gap-2">
+              <ShieldCheck size={16} className="text-[#4d6438]" />
               Logo Anatomy & Brand Integrity
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#575268]">
-              <div className="bg-white p-3 rounded-xl border border-[#d9d1e2]/60">
-                <span className="font-bold text-[#191633] block mb-1">1. Majestic Elephant W</span>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#666666]">
+              <div className="bg-white p-3 rounded-xl border border-[#dddddd]/60">
+                <span className="font-bold text-[#2f2f2f] block mb-1">1. Majestic Elephant W</span>
                 The left diagonal of the W embodies an African elephant with contoured trunk rings, ivory tusk, and ear lobes.
               </div>
-              <div className="bg-white p-3 rounded-xl border border-[#d9d1e2]/60">
-                <span className="font-bold text-[#191633] block mb-1">2. Roaring Bengal Tiger D</span>
+              <div className="bg-white p-3 rounded-xl border border-[#dddddd]/60">
+                <span className="font-bold text-[#2f2f2f] block mb-1">2. Roaring Bengal Tiger D</span>
                 The outer arch of the D sculpts a roaring Bengal tiger with predatory stripes, canines, and whiskers.
               </div>
-              <div className="bg-white p-3 rounded-xl border border-[#d9d1e2]/60">
-                <span className="font-bold text-[#191633] block mb-1">3. Tracked COLLECTIVE</span>
+              <div className="bg-white p-3 rounded-xl border border-[#dddddd]/60">
+                <span className="font-bold text-[#2f2f2f] block mb-1">3. Tracked COLLECTIVE</span>
                 Centered uppercase geometric sans typography anchoring the bold WILD mark.
               </div>
             </div>
@@ -220,11 +220,11 @@ export const BrandAssetsModal: React.FC<BrandAssetsModalProps> = ({ isOpen, onCl
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 bg-[#f8f4ed] border-t border-[#ece7f2] flex items-center justify-between text-xs text-[#575268]">
+        <div className="px-6 py-4 bg-[#f8f4ed] border-t border-[#ececec] flex items-center justify-between text-xs text-[#666666]">
           <span>Direct manufacturing by Wild Collective, Mysuru</span>
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-[#1f1b64] text-white font-bold hover:bg-[#2c2685] transition-colors"
+            className="px-5 py-2 rounded-xl bg-[#2f2f2f] text-white font-bold hover:bg-[#2c2685] transition-colors"
           >
             Done
           </button>

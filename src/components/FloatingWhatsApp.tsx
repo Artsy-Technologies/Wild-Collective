@@ -12,12 +12,12 @@ export const FloatingWhatsApp: React.FC = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
       {showTooltip && (
-        <div className="hidden sm:flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl shadow-xl border border-[#d9d1e2] text-xs font-bold text-[#191633] animate-bounce duration-1000">
+        <div className="hidden sm:flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl shadow-xl border border-[#dddddd] text-xs font-bold text-[#2f2f2f] animate-bounce duration-1000">
           <span className="w-2 h-2 rounded-full bg-[#26d07c] animate-ping"></span>
           <span>Chat with Wild Collective</span>
           <button
             onClick={() => setShowTooltip(false)}
-            className="text-[#8d889b] hover:text-[#191633] ml-1"
+            className="text-[#8f8f8f] hover:text-[#2f2f2f] ml-1"
           >
             <X size={12} />
           </button>

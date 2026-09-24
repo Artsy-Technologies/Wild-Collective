@@ -72,24 +72,24 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       {/* Top Banner Notice */}
-      <div className="bg-[#1f1b64] text-white py-1.5 px-4 text-xs font-medium tracking-wide">
+      <div className="bg-white text-[#2f2f2f] border-b border-[#ececec] py-1.5 px-4 text-xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 min-w-0">
             <span className="inline-block shrink-0 w-2 h-2 rounded-full bg-[#26d07c] animate-pulse"></span>
             <span className="truncate">Wild Collective — Custom apparel, merchandise & corporate gifting</span>
           </div>
-          <div className="hidden md:flex items-center gap-5 text-slate-200">
+          <div className="hidden md:flex items-center gap-5 text-[#666666]">
             <a 
               href={`tel:${COMPANY_INFO.phoneRaw}`} 
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-[#0a0a0a] transition-colors"
             >
-              <PhoneCall size={13} className="text-[#ffd84d]" />
+              <PhoneCall size={13} className="text-[#a58c6d]" />
               <span>{COMPANY_INFO.phone}</span>
             </a>
-            <span className="text-slate-400">|</span>
+            <span className="text-[#dddddd]">|</span>
             <a 
               href={`mailto:${COMPANY_INFO.emails[0]}`} 
-              className="hover:text-white transition-colors underline"
+              className="hover:text-[#0a0a0a] transition-colors"
             >
               {COMPANY_INFO.emails[0]}
             </a>
@@ -98,127 +98,140 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Header */}
-      <header className="sticky top-0 z-40 bg-[#fffaf2]/90 backdrop-blur-md border-b border-[#d9d1e2]/80 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Official Logo & Exact Asset Pill */}
-            <div className="flex items-center gap-3 shrink-0">
-              <div className="flex items-center py-1 cursor-pointer group" onClick={() => handleNavClick('home')}>
-                <WildCollectiveLogo variant="dark" height={48} className="max-h-12 w-auto group-hover:scale-[1.02] transition-transform duration-200" />
+      <header className="sticky top-0 z-40 shadow-[0_1px_3px_rgba(0,0,0,0.12)] transition-all">
+        <div className="bg-[#2f2f2f]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between gap-6 h-20 xl:h-24">
+              {/* Official Logo & Exact Asset Pill */}
+              <div className="flex items-center gap-3 shrink-0">
+                <div className="flex items-center py-1 cursor-pointer group" onClick={() => handleNavClick('home')}>
+                  <WildCollectiveLogo variant="light" height={56} className="max-h-14 w-auto group-hover:opacity-90 transition-opacity duration-200" />
+                </div>
+                <button
+                  onClick={() => setBrandModalOpen(true)}
+                  className="hidden md:inline-flex whitespace-nowrap items-center gap-1.5 px-2.5 py-1 rounded border border-white/40 text-white hover:bg-white hover:text-[#2f2f2f] text-[11px] font-bold transition-all"
+                  title="View & Download Exact Official Logo Assets"
+                >
+                  <Sparkles size={12} className="text-[#d9bf94]" />
+                  <span>Exact Logo</span>
+                </button>
               </div>
-              <button
-                onClick={() => setBrandModalOpen(true)}
-                className="hidden md:inline-flex xl:hidden 2xl:inline-flex whitespace-nowrap items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#e7e2ff] hover:bg-[#1f1b64] text-[#1f1b64] hover:text-white border border-[#d9d1e2] text-[11px] font-bold transition-all shadow-2xs"
-                title="View & Download Exact Official Logo Assets"
-              >
-                <Sparkles size={12} className="text-[#ff6948]" />
-                <span>Exact Logo</span>
-              </button>
-            </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden xl:flex items-center gap-1">
-              {navItems.map((item) => {
-                const isActive = activeTab === item.id;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavClick(item.id)}
-                    className={`relative px-3 py-2 text-sm font-semibold whitespace-nowrap rounded-lg transition-all duration-150 flex items-center gap-1.5 ${
-                      item.highlight 
-                        ? 'bg-gradient-to-r from-[#1f1b64] to-[#2b2588] text-white shadow-sm hover:opacity-95' 
-                        : isActive
-                          ? 'text-[#1f1b64] bg-[#e7e2ff]/60 font-bold'
-                          : 'text-[#575268] hover:text-[#1f1b64] hover:bg-[#f2ede6]/80'
-                    }`}
-                  >
-                    {item.highlight && <Sparkles size={14} className="text-[#ffd84d] animate-pulse" />}
-                    <span>{item.label}</span>
-                    {item.count && (
-                      <span className={`text-[10px] font-bold px-1.5 py-0.2 rounded-full ${
-                        isActive ? 'bg-[#1f1b64] text-white' : 'bg-[#e7e2ff] text-[#1f1b64]'
-                      }`}>
-                        {item.count}
-                      </span>
-                    )}
-                    {item.badge && (
-                      <span className="text-[9px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#c5efd4] text-[#0d5930] tracking-wider">
-                        {item.badge}
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </nav>
-
-            {/* Action Buttons */}
-            <div className="flex items-center gap-2.5 shrink-0">
-              {/* Search Button */}
+              {/* Search field (Flatsome-style header search) */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className="w-10 h-10 flex items-center justify-center rounded-xl text-[#575268] hover:text-[#1f1b64] hover:bg-[#f2ede6] transition-colors"
-                title="Search products"
+                className="hidden md:flex flex-1 max-w-xl items-center justify-between h-10 pl-4 pr-1 bg-white rounded-sm text-sm text-[#8f8f8f] text-left"
                 aria-label="Search products"
               >
-                <Search size={18} />
+                <span className="truncate">Search products (e.g. round neck, collar polo, hoodie, bottle, mug, tote bag)...</span>
+                <span className="h-8 w-9 flex items-center justify-center rounded-sm bg-[#a58c6d] text-white shrink-0">
+                  <Search size={16} />
+                </span>
               </button>
 
-              {/* WhatsApp Quote Button */}
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsappRaw}?text=${encodeURIComponent(
-                  "Hi Wild Collective, I would like to enquire about custom apparel / corporate merchandise quote."
-                )}`}
-                target="_blank"
-                rel="noreferrer"
-                className="hidden sm:inline-flex whitespace-nowrap items-center gap-2 px-4 py-2.5 rounded-xl bg-[#26d07c] hover:bg-[#20b86c] text-[#0d3f23] text-sm font-bold shadow-sm transition-all transform active:scale-95"
-              >
-                <MessageCircle size={18} className="fill-[#0d3f23] text-[#26d07c]" />
-                <span className="xl:hidden 2xl:inline">WhatsApp Quote</span>
-              </a>
+              {/* Action Buttons */}
+              <div className="flex items-center gap-2.5 shrink-0">
+                {/* Search Button (mobile) */}
+                <button
+                  onClick={() => setSearchOpen(true)}
+                  className="md:hidden w-10 h-10 flex items-center justify-center rounded text-white hover:bg-white/10 transition-colors"
+                  title="Search products"
+                  aria-label="Search products"
+                >
+                  <Search size={18} />
+                </button>
 
-              {/* Mobile menu trigger */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="xl:hidden w-10 h-10 flex items-center justify-center rounded-xl text-[#1f1b64] hover:bg-[#f2ede6]"
-                aria-label="Toggle menu"
-              >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+                {/* WhatsApp Quote Button */}
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.whatsappRaw}?text=${encodeURIComponent(
+                    "Hi Wild Collective, I would like to enquire about custom apparel / corporate merchandise quote."
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hidden sm:inline-flex whitespace-nowrap items-center gap-2 px-4 py-2.5 rounded-sm bg-[#26d07c] hover:bg-[#20b86c] text-[#0d3f23] text-sm font-bold uppercase tracking-wide transition-all"
+                >
+                  <MessageCircle size={18} className="fill-[#0d3f23] text-[#26d07c]" />
+                  <span>WhatsApp Quote</span>
+                </a>
+
+                {/* Mobile menu trigger */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="xl:hidden w-10 h-10 flex items-center justify-center rounded text-white hover:bg-white/10"
+                  aria-label="Toggle menu"
+                >
+                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Desktop Navigation Links (Flatsome header-bottom bar) */}
+        <div className="hidden xl:block bg-white border-b border-[#ececec]">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-1 min-h-[52px]">
+            {navItems.map((item) => {
+              const isActive = activeTab === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`relative px-3.5 py-2 text-sm font-bold uppercase tracking-wide whitespace-nowrap rounded-sm transition-colors duration-150 flex items-center gap-1.5 ${
+                    isActive
+                      ? 'bg-[#0a0a0a] text-white'
+                      : item.highlight
+                        ? 'text-[#a58c6d] hover:bg-[#0a0a0a] hover:text-white'
+                        : 'text-[#2f2f2f] hover:bg-[#0a0a0a] hover:text-white'
+                  }`}
+                >
+                  {item.highlight && <Sparkles size={14} />}
+                  <span>{item.label}</span>
+                  {item.count && (
+                    <span className="text-[10px] font-bold px-1.5 rounded-sm bg-[#a58c6d] text-white">
+                      {item.count}
+                    </span>
+                  )}
+                  {item.badge && (
+                    <span className="text-[9px] uppercase font-bold px-1.5 py-0.5 rounded-sm bg-[#627d47] text-white tracking-wider">
+                      {item.badge}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </nav>
+        </div>
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
-          <div className="xl:hidden border-b border-[#d9d1e2] bg-[#fffaf2] px-4 pt-2 pb-6 space-y-1 shadow-lg animate-fadeIn">
+          <div className="xl:hidden border-b border-[#dddddd] bg-white px-4 pt-2 pb-6 space-y-1 shadow-lg animate-fadeIn">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
                   activeTab === item.id
-                    ? 'bg-[#1f1b64] text-white'
-                    : 'text-[#191633] hover:bg-[#f2ede6]'
+                    ? 'bg-[#2f2f2f] text-white'
+                    : 'text-[#2f2f2f] hover:bg-[#f5f3ef]'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  {item.highlight && <Sparkles size={16} className="text-[#ffd84d]" />}
+                  {item.highlight && <Sparkles size={16} className="text-[#d9bf94]" />}
                   <span>{item.label}</span>
                 </div>
                 {item.badge && (
-                  <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-[#c5efd4] text-[#0d5930]">
+                  <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-[#e4ead9] text-[#4d6438]">
                     {item.badge}
                   </span>
                 )}
                 {item.count && (
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#e7e2ff] text-[#1f1b64]">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#f1ebe3] text-[#2f2f2f]">
                     {item.count} items
                   </span>
                 )}
               </button>
             ))}
 
-            <div className="pt-4 border-t border-[#d9d1e2] mt-4 space-y-2">
+            <div className="pt-4 border-t border-[#dddddd] mt-4 space-y-2">
               <a
                 href={`https://wa.me/${COMPANY_INFO.whatsappRaw}?text=${encodeURIComponent(
                   "Hi Wild Collective, I would like to enquire about custom apparel / corporate merchandise quote."
@@ -233,15 +246,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#d9d1e2] text-[#1f1b64] font-bold text-center"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#dddddd] text-[#2f2f2f] font-bold text-center"
               >
                 <PhoneCall size={18} />
                 <span>Call Us ({COMPANY_INFO.phone})</span>
               </a>
 
-              <div className="text-center pt-2 text-xs text-[#575268] space-y-0.5">
+              <div className="text-center pt-2 text-xs text-[#666666] space-y-0.5">
                 <p>Email: {COMPANY_INFO.emails.join(' · ')}</p>
-                <p className="text-[11px] text-[#8d889b]">Direct factory pricing · Mysuru</p>
+                <p className="text-[11px] text-[#8f8f8f]">Direct factory pricing · Mysuru</p>
               </div>
             </div>
           </div>
@@ -251,20 +264,20 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Global Search Modal */}
       {searchOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start justify-center pt-16 px-4">
-          <div className="bg-[#fffaf2] w-full max-w-2xl rounded-2xl shadow-2xl border border-[#d9d1e2] overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="p-4 border-b border-[#d9d1e2] flex items-center gap-3">
-              <Search size={20} className="text-[#575268]" />
+          <div className="bg-[#ffffff] w-full max-w-2xl rounded-2xl shadow-2xl border border-[#dddddd] overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="p-4 border-b border-[#dddddd] flex items-center gap-3">
+              <Search size={20} className="text-[#666666]" />
               <input
                 type="text"
                 autoFocus
                 placeholder="Search products (e.g. round neck, collar polo, hoodie, bottle, mug, tote bag)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-transparent text-lg font-medium text-[#191633] placeholder-[#8d889b] focus:outline-none"
+                className="w-full bg-transparent text-lg font-medium text-[#2f2f2f] placeholder-[#8f8f8f] focus:outline-none"
               />
               <button
                 onClick={() => setSearchOpen(false)}
-                className="p-1 rounded-lg hover:bg-[#f2ede6] text-[#575268]"
+                className="p-1 rounded-lg hover:bg-[#f5f3ef] text-[#666666]"
               >
                 <X size={20} />
               </button>
@@ -272,15 +285,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <div className="max-h-96 overflow-y-auto p-4">
               {searchQuery.trim() === '' ? (
-                <div className="py-8 text-center text-sm text-[#575268]">
-                  <p className="font-semibold text-base text-[#191633] mb-1">Explore our full Mysuru catalogue</p>
+                <div className="py-8 text-center text-sm text-[#666666]">
+                  <p className="font-semibold text-base text-[#2f2f2f] mb-1">Explore our full Mysuru catalogue</p>
                   <p>Type any product name, apparel category, drinkware, bag, or gift item.</p>
                   <div className="flex flex-wrap justify-center gap-2 mt-4">
                     {['Round Neck T-Shirt', 'Collar T-Shirt', 'UV Bottle', 'Hoodie', 'Tote Bag', 'Diary', 'Smart Caps'].map(tag => (
                       <button
                         key={tag}
                         onClick={() => setSearchQuery(tag)}
-                        className="text-xs px-3 py-1.5 rounded-full bg-[#f2ede6] hover:bg-[#e7e2ff] text-[#1f1b64] font-medium transition-colors"
+                        className="text-xs px-3 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#f1ebe3] text-[#2f2f2f] font-medium transition-colors"
                       >
                         {tag}
                       </button>
@@ -288,15 +301,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </div>
                 </div>
               ) : searchResults.length > 0 ? (
-                <div className="divide-y divide-[#ece7f2]">
+                <div className="divide-y divide-[#ececec]">
                   {searchResults.map((p) => (
                     <div
                       key={p.id}
                       onClick={() => handleProductSelect(p.id)}
-                      className="py-3 px-3 rounded-xl hover:bg-[#f2ede6] flex items-center justify-between cursor-pointer transition-colors group"
+                      className="py-3 px-3 rounded-xl hover:bg-[#f5f3ef] flex items-center justify-between cursor-pointer transition-colors group"
                     >
                       <div className="flex items-center gap-3.5">
-                        <div className="w-14 h-14 rounded-lg bg-white border border-[#d9d1e2] p-1 flex items-center justify-center shrink-0 overflow-hidden">
+                        <div className="w-14 h-14 rounded-lg bg-white border border-[#dddddd] p-1 flex items-center justify-center shrink-0 overflow-hidden">
                           <ProductVisual
                             productId={p.id}
                             category={p.category}
@@ -306,33 +319,33 @@ export const Navbar: React.FC<NavbarProps> = ({
                           />
                         </div>
                         <div>
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#ff6948]">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#a58c6d]">
                             {p.category}
                           </span>
-                          <h4 className="font-display font-bold text-base text-[#191633] group-hover:text-[#1f1b64]">
+                          <h4 className="font-display font-bold text-base text-[#2f2f2f] group-hover:text-[#2f2f2f]">
                             {p.title}
                           </h4>
-                          <p className="text-xs text-[#575268]">{p.price}</p>
+                          <p className="text-xs text-[#666666]">{p.price}</p>
                         </div>
                       </div>
-                      <span className="inline-flex items-center text-xs font-bold text-[#1f1b64] group-hover:translate-x-1 transition-transform">
+                      <span className="inline-flex items-center text-xs font-bold text-[#2f2f2f] group-hover:translate-x-1 transition-transform">
                         View details <ArrowRight size={14} className="ml-1" />
                       </span>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="py-8 text-center text-sm text-[#575268]">
+                <div className="py-8 text-center text-sm text-[#666666]">
                   No products matched &quot;{searchQuery}&quot;. Try searching for &quot;T-Shirt&quot;, &quot;Cap&quot;, or &quot;Bottle&quot;.
                 </div>
               )}
             </div>
 
-            <div className="bg-[#f2ede6] px-4 py-2.5 border-t border-[#d9d1e2] text-xs text-[#575268] flex items-center justify-between">
+            <div className="bg-[#f5f3ef] px-4 py-2.5 border-t border-[#dddddd] text-xs text-[#666666] flex items-center justify-between">
               <span>Showing results from 40+ Wild Collective products</span>
               <button 
                 onClick={() => { setSearchOpen(false); handleNavClick('products'); }}
-                className="font-bold text-[#1f1b64] hover:underline"
+                className="font-bold text-[#2f2f2f] hover:underline"
               >
                 Browse All Products
               </button>

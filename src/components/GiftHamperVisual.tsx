@@ -142,7 +142,7 @@ export const GiftHamperVisual: React.FC<GiftHamperVisualProps> = ({
       </svg>
 
       {/* Floating Badge */}
-      <span className="absolute bottom-4 left-6 text-xs font-black text-[#ffd84d] bg-[#0c0e11]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#384152] shadow-lg flex items-center gap-1.5">
+      <span className="absolute bottom-4 left-6 text-xs font-black text-[#d9bf94] bg-[#0c0e11]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#384152] shadow-lg flex items-center gap-1.5">
         <span>✦</span> {badge}
       </span>
     </div>

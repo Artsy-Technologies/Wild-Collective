@@ -86,7 +86,7 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
           className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
         />
         {badge && (
-          <span className="absolute bottom-1 right-2 text-[9px] font-bold text-[#8d889b] bg-white/80 px-1.5 py-0.5 rounded backdrop-blur-xs">
+          <span className="absolute bottom-1 right-2 text-[9px] font-bold text-[#8f8f8f] bg-white/80 px-1.5 py-0.5 rounded backdrop-blur-xs">
             {badge}
           </span>
         )}
@@ -110,7 +110,7 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
               <stop offset="1" stopColor="#ded3c0" />
             </linearGradient>
             <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
-              <feDropShadow dx="0" dy="12" stdDeviation="16" floodColor="#191633" floodOpacity="0.12" />
+              <feDropShadow dx="0" dy="12" stdDeviation="16" floodColor="#2f2f2f" floodOpacity="0.12" />
             </filter>
             <pattern id="canvasWeave" width="4" height="4" patternUnits="userSpaceOnUse">
               <rect width="4" height="4" fill="#f7f3ea" />
@@ -163,12 +163,12 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
           <path d="M190 205 Q 195 300 190 435" stroke="#dfd4c2" strokeWidth="2" opacity="0.4" strokeLinecap="round" />
 
           {/* Minimal Wild Collective branding imprint preview */}
-          <circle cx="200" cy="290" r="14" fill="#1f1b64" fillOpacity="0.08" />
-          <text x="200" y="294" textAnchor="middle" fill="#1f1b64" fillOpacity="0.4" fontSize="10" fontFamily="sans-serif" fontWeight="800">
+          <circle cx="200" cy="290" r="14" fill="#2f2f2f" fillOpacity="0.08" />
+          <text x="200" y="294" textAnchor="middle" fill="#2f2f2f" fillOpacity="0.4" fontSize="10" fontFamily="sans-serif" fontWeight="800">
             W
           </text>
         </svg>
-        <span className="absolute bottom-1 right-2 text-[9px] font-bold text-[#8d889b] bg-white/80 px-1.5 py-0.5 rounded backdrop-blur-xs">
+        <span className="absolute bottom-1 right-2 text-[9px] font-bold text-[#8f8f8f] bg-white/80 px-1.5 py-0.5 rounded backdrop-blur-xs">
           100% Cotton Canvas
         </span>
       </div>
@@ -287,13 +287,13 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
 
           {/* Subtle Wild Collective logo laser imprint */}
           <circle cx="160" cy="270" r="12" fill={current.accent} fillOpacity="0.4" />
-          <text x="160" y="274" textAnchor="middle" fill={current.fill === '#f8fafc' ? '#1f1b64' : '#ffffff'} fontSize="9" fontWeight="800">
+          <text x="160" y="274" textAnchor="middle" fill={current.fill === '#f8fafc' ? '#2f2f2f' : '#ffffff'} fontSize="9" fontWeight="800">
             W
           </text>
         </svg>
 
         {/* Color Switcher Pills */}
-        <div className="flex items-center gap-1.5 mt-2 bg-white/90 backdrop-blur-xs px-2 py-1 rounded-full border border-[#d9d1e2] shadow-xs">
+        <div className="flex items-center gap-1.5 mt-2 bg-white/90 backdrop-blur-xs px-2 py-1 rounded-full border border-[#dddddd] shadow-xs">
           {bottleColors.map((c) => (
             <button
               key={c.name}
@@ -305,7 +305,7 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
               title={c.label}
               className={`w-3.5 h-3.5 rounded-full border transition-transform ${
                 activeColor === c.name || (activeColor === 'default' && c.name === 'black')
-                  ? 'scale-125 border-[#1f1b64] ring-1 ring-[#1f1b64]'
+                  ? 'scale-125 border-[#2f2f2f] ring-1 ring-[#2f2f2f]'
                   : 'border-black/20 hover:scale-110'
               }`}
               style={{ backgroundColor: c.fill }}
@@ -518,14 +518,14 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
           <path d="M142 120 L 142 270" stroke="white" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
 
           {/* Wild Collective Brand Badge on Mug */}
-          <circle cx="200" cy="200" r="20" fill="#1f1b64" fillOpacity="0.06" />
-          <text x="200" y="205" textAnchor="middle" fill="#1f1b64" fontSize="12" fontWeight="900">
+          <circle cx="200" cy="200" r="20" fill="#2f2f2f" fillOpacity="0.06" />
+          <text x="200" y="205" textAnchor="middle" fill="#2f2f2f" fontSize="12" fontWeight="900">
             WC
           </text>
         </svg>
 
         {/* Color Switcher */}
-        <div className="flex items-center gap-1.5 mt-2 bg-white/90 backdrop-blur-xs px-2 py-1 rounded-full border border-[#d9d1e2] shadow-xs">
+        <div className="flex items-center gap-1.5 mt-2 bg-white/90 backdrop-blur-xs px-2 py-1 rounded-full border border-[#dddddd] shadow-xs">
           {mugColors.map((c) => (
             <button
               key={c.name}
@@ -537,7 +537,7 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
               title={c.label}
               className={`w-3.5 h-3.5 rounded-full border transition-transform ${
                 activeColor === c.name || (activeColor === 'default' && c.name === 'yellow')
-                  ? 'scale-125 border-[#1f1b64] ring-1 ring-[#1f1b64]'
+                  ? 'scale-125 border-[#2f2f2f] ring-1 ring-[#2f2f2f]'
                   : 'border-black/20 hover:scale-110'
               }`}
               style={{ backgroundColor: c.inner }}
@@ -683,15 +683,15 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
           </g>
 
           {/* High-def badge branding */}
-          <circle cx="245" cy="180" r="45" fill="#1f1b64" />
+          <circle cx="245" cy="180" r="45" fill="#2f2f2f" />
           <text x="245" y="176" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="800">
             WILD
           </text>
-          <text x="245" y="192" textAnchor="middle" fill="#ffd84d" fontSize="9" fontWeight="800">
+          <text x="245" y="192" textAnchor="middle" fill="#d9bf94" fontSize="9" fontWeight="800">
             COLLECTIVE
           </text>
         </svg>
-        <span className="absolute bottom-1 right-2 text-[9px] font-bold text-[#1f1b64] bg-[#e7e2ff] px-1.5 py-0.5 rounded">
+        <span className="absolute bottom-1 right-2 text-[9px] font-bold text-[#2f2f2f] bg-[#f1ebe3] px-1.5 py-0.5 rounded">
           Glossy Button Badge
         </span>
       </div>
@@ -1135,16 +1135,16 @@ export const ProductVisual: React.FC<ProductVisualProps> = ({
   // Default Luxury Fallback with Category Icon & Spec
   return (
     <div className={`relative flex flex-col items-center justify-center p-4 bg-gradient-to-b from-[#fbf8f3] to-[#f4ede4] rounded-2xl select-none ${className}`}>
-      <div className="w-16 h-16 rounded-2xl bg-[#1f1b64]/5 border border-[#1f1b64]/10 flex items-center justify-center text-[#1f1b64] font-display font-black text-2xl shadow-inner">
+      <div className="w-16 h-16 rounded-2xl bg-[#2f2f2f]/5 border border-[#2f2f2f]/10 flex items-center justify-center text-[#2f2f2f] font-display font-black text-2xl shadow-inner">
         W
       </div>
-      <p className="font-display font-black text-sm text-[#191633] mt-3 text-center line-clamp-1">
+      <p className="font-display font-black text-sm text-[#2f2f2f] mt-3 text-center line-clamp-1">
         {title || 'Wild Collective'}
       </p>
-      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff6948] mt-0.5">
+      <span className="text-[10px] font-bold uppercase tracking-wider text-[#a58c6d] mt-0.5">
         {category || 'Custom Merchandise'}
       </span>
-      <span className="mt-2 text-[9px] font-extrabold text-[#0d5930] bg-[#c5efd4] px-2 py-0.5 rounded">
+      <span className="mt-2 text-[9px] font-extrabold text-[#4d6438] bg-[#e4ead9] px-2 py-0.5 rounded">
         Factory direct
       </span>
     </div>

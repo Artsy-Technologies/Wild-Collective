@@ -1,37 +1,63 @@
 @import "tailwindcss";
 
+/* Theme modelled on thegiftshop.ie (Flatsome): Asap, charcoal + bronze, crisp corners */
+@theme {
+  --font-sans: 'Asap', system-ui, -apple-system, sans-serif;
+  --radius-sm: 2px;
+  --radius: 3px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 5px;
+  --radius-2xl: 6px;
+  --radius-3xl: 8px;
+  --font-weight-extrabold: 700;
+  --font-weight-black: 800;
+}
+
 :root {
-  --brand-background: #fffaf2;
-  --brand-surface: #f2ede6;
-  --brand-surface-subtle: #f8f4ee;
-  --brand-primary: #1f1b64;
-  --brand-primary-hover: #17134f;
-  --brand-primary-soft: #e7e2ff;
-  --brand-signal: #ff6948;
-  --brand-signal-hover: #e55536;
-  --brand-signal-soft: #fde8e3;
-  --brand-signal-ink: #3f3650;
-  --brand-text: #191633;
-  --brand-muted: #575268;
-  --brand-border: #d9d1e2;
-  --brand-border-light: #ece7f2;
+  --brand-background: #ffffff;
+  --brand-surface: #f5f3ef;
+  --brand-surface-subtle: #faf9f7;
+  --brand-primary: #2f2f2f;
+  --brand-primary-hover: #0a0a0a;
+  --brand-primary-soft: #f1ebe3;
+  --brand-signal: #a58c6d;
+  --brand-signal-hover: #8a7358;
+  --brand-signal-soft: #f3ede5;
+  --brand-signal-ink: #2f2f2f;
+  --brand-text: #2f2f2f;
+  --brand-base: #4a4a4a;
+  --brand-muted: #666666;
+  --brand-border: #dddddd;
+  --brand-border-light: #ececec;
   --brand-whatsapp: #26d07c;
-  --brand-mint: #c5efd4;
-  --brand-lilac: #d8c8ff;
-  --brand-marigold: #ffd84d;
-  --brand-sky: #b9dcff;
-  --brand-aqua: #65d9ca;
+  --brand-success: #627d47;
+  --brand-alert: #b20000;
+}
+
+html {
+  background-color: #2f2f2f;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Asap', system-ui, -apple-system, sans-serif;
   background-color: var(--brand-background);
-  color: var(--brand-text);
+  color: var(--brand-base);
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Asap', system-ui, sans-serif;
+  color: inherit;
+  letter-spacing: -0.005em;
+}
+
 .font-display {
-  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-weight: 700;
+}
+
+a {
+  transition: color 0.2s ease;
 }
 
 /* Custom scrollbars and marquee animations */
@@ -50,16 +76,28 @@ body {
   animation-play-state: paused;
 }
 
-/* Glass & elevated cards */
+/* Flatsome-style product boxes: flat, thin border, soft lift */
 .wc-card {
   background: white;
-  border: 1px solid var(--brand-border);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--brand-border-light);
+  transition: all 0.25s ease;
 }
 
 .wc-card:hover {
-  border-color: var(--brand-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(31, 27, 100, 0.08);
+  border-color: var(--brand-border);
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Flatsome section title: centered text with rule lines either side */
+.gs-section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.gs-section-title::before,
+.gs-section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.1);
+}
