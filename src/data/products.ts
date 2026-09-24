@@ -25,6 +25,7 @@ export interface Product {
   price: string;
   priceNote: string;
   moq?: string;
+  priceDetail?: string;
   colours: ProductColour[];
 }
 
@@ -996,6 +997,7 @@ export const PRODUCTS: Product[] = [
     ],
     "price": "₹30",
     "priceNote": "",
+    "priceDetail": "Client artwork also references approximately ₹4.25 per sq inch; confirm final specification.",
     "colours": []
   },
   {
@@ -1107,6 +1109,7 @@ export const PRODUCTS: Product[] = [
     ],
     "price": "₹20 · ₹25",
     "priceNote": "Exact option confirmed with your requirement.",
+    "priceDetail": "₹20 — MOQ 100 · ₹25 — MOQ 50. Option details to be confirmed.",
     "colours": []
   },
   {

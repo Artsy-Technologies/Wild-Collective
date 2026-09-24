@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, MessageCircle, PhoneCall, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MessageCircle, PhoneCall, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   COMPANY_INFO,
   PRODUCTS,
@@ -11,58 +11,30 @@ import {
 } from '../data/products';
 import { ProductCard } from './ProductCard';
 
-interface ProductDetailModalProps {
-  product: Product | null;
-  onClose: () => void;
+interface ProductPageProps {
+  product: Product;
+  onBack: () => void;
   onOpenProduct: (product: Product) => void;
   onBuildQuote: () => void;
 }
 
-export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product, ...rest }) => {
-  if (!product) return null;
-  // Keyed by product so every product opens on its first image
-  return <ProductDetailContent key={product.id} product={product} {...rest} />;
-};
-
-const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Product }> = ({
-  product,
-  onClose,
-  onOpenProduct,
-  onBuildQuote,
-}) => {
+export const ProductPage: React.FC<ProductPageProps> = ({ product, onBack, onOpenProduct, onBuildQuote }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const images = product.images.length ? product.images : [{ src: product.image, alt: product.title }];
   const active = images[imageIndex];
   const related = PRODUCTS.filter((p) => p.categorySlug === product.categorySlug && p.id !== product.id).slice(0, 3);
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
-    window.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [onClose]);
+  useEffect(() => setImageIndex(0), [product.id]);
 
   const step = (d: number) => setImageIndex((i) => (i + d + images.length) % images.length);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 flex items-start justify-center overflow-y-auto p-0 sm:p-6" onClick={onClose}>
-      <div
-        className="bg-white w-full max-w-6xl sm:rounded-lg shadow-2xl relative"
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-label={product.title}
-      >
-        <div className="sticky top-0 z-10 flex items-center justify-between px-5 sm:px-8 py-3 bg-white border-b border-[#ececec] sm:rounded-t-lg">
-          <button onClick={onClose} className="text-sm font-bold text-[#666666] hover:text-[#2f2f2f] flex items-center gap-1">
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="px-5 sm:px-8 pt-6">
+          <button onClick={onBack} className="text-sm font-bold text-[#666666] hover:text-[#2f2f2f] flex items-center gap-1">
             <ChevronLeft size={16} />
             <span>Back to {product.category}</span>
-          </button>
-          <button onClick={onClose} className="p-1.5 rounded hover:bg-[#f5f3ef] text-[#666666]" aria-label="Close">
-            <X size={20} />
           </button>
         </div>
 
@@ -118,7 +90,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
           <div className="space-y-7">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-[#a58c6d]">{product.category}</p>
-              <h2 className="font-display text-4xl sm:text-5xl font-black text-[#2f2f2f] mt-3">{product.title}</h2>
+              <h1 className="font-display text-4xl sm:text-5xl font-black text-[#2f2f2f] mt-3">{product.title}</h1>
               <p className="text-lg text-[#666666] mt-5 leading-relaxed">{product.description}</p>
             </div>
 
@@ -142,6 +114,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
               ) : (
                 <p className="font-display text-2xl font-black text-[#2f2f2f]">Price on request</p>
               )}
+              {product.priceDetail && <p className="mt-3 text-sm text-[#2f2f2f]">{product.priceDetail}</p>}
               {product.moq && (
                 <p className="mt-3 text-sm text-[#2f2f2f]">
                   Minimum order quantity: <strong>{product.moq}</strong>
@@ -155,6 +128,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
                 <p className="text-xs font-bold uppercase tracking-widest text-[#8f8f8f]">
                   Available colours · {product.colours.length} colours
                 </p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#8f8f8f] mt-4">Colour preview</p>
                 <ul className="flex flex-wrap gap-3 mt-3" aria-label="Colour preview">
                   {product.colours.map((c) => (
                     <li key={c.code} className="flex items-center gap-2 pr-3 py-1 pl-1 rounded-full border border-[#ececec]">
@@ -219,7 +193,7 @@ const ProductDetailContent: React.FC<ProductDetailModalProps & { product: Produc
           </div>
         )}
 
-        <div className="bg-[#f5f3ef] px-5 sm:px-8 py-8 sm:rounded-b-lg flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div className="bg-[#f5f3ef] px-5 sm:px-8 py-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="max-w-2xl">
             <h3 className="font-display text-2xl font-black text-[#2f2f2f]">Need a different quantity or format?</h3>
             <p className="text-sm text-[#666666] mt-2">

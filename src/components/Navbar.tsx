@@ -5,7 +5,6 @@ import {
   Menu, 
   X, 
   PhoneCall, 
-  Sparkles,
   ArrowRight,
   Shirt,
   Gift,
@@ -14,7 +13,6 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO, PRODUCTS } from '../data/products';
 import { WildCollectiveLogo } from './WildCollectiveLogo';
-import { BrandAssetsModal } from './BrandAssetsModal';
 
 interface NavbarProps {
   activeTab: string;
@@ -30,7 +28,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [brandModalOpen, setBrandModalOpen] = useState(false);
 
   const navItems: { id: string; label: string }[] = [
     { id: 'home', label: 'Home' },
@@ -68,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 min-w-0">
             <span className="inline-block shrink-0 w-2 h-2 rounded-full bg-[#26d07c] animate-pulse"></span>
-            <span className="truncate">Wild Collective — Custom apparel, merchandise & corporate gifting</span>
+            <span className="truncate">Custom Printing · Merchandise · Corporate Gifts</span>
           </div>
           <div className="hidden md:flex items-center gap-5 text-[#666666]">
             <a 
@@ -99,14 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <div className="flex items-center py-1 cursor-pointer group" onClick={() => handleNavClick('home')}>
                   <WildCollectiveLogo variant="light" height={56} className="max-h-14 w-auto group-hover:opacity-90 transition-opacity duration-200" />
                 </div>
-                <button
-                  onClick={() => setBrandModalOpen(true)}
-                  className="hidden md:inline-flex whitespace-nowrap items-center gap-1.5 px-2.5 py-1 rounded border border-white/40 text-white hover:bg-white hover:text-[#2f2f2f] text-[11px] font-bold transition-all"
-                  title="View & Download Exact Official Logo Assets"
-                >
-                  <Sparkles size={12} className="text-[#d9bf94]" />
-                  <span>Exact Logo</span>
-                </button>
               </div>
 
               {/* Search field (Flatsome-style header search) */}
@@ -315,12 +304,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       )}
-
-      {/* Official Brand Assets & Exact Logo Modal */}
-      <BrandAssetsModal 
-        isOpen={brandModalOpen} 
-        onClose={() => setBrandModalOpen(false)} 
-      />
     </>
   );
 };

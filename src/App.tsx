@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { MarqueeTicker } from './components/MarqueeTicker';
 import { CategoryNav } from './components/CategoryNav';
 import { FeaturedProducts, GiftingTeaser, ProcessSteps } from './components/HomeSections';
 import { ProductCatalog } from './components/ProductCatalog';
-import { ProductDetailModal } from './components/ProductDetailModal';
+import { ProductPage } from './components/ProductPage';
 import { GolfTShirtsSection } from './components/GolfTShirtsSection';
 import { CorporateGiftBuilder } from './components/CorporateGiftBuilder';
 import { CustomPrintingGuide } from './components/CustomPrintingGuide';
@@ -20,58 +20,62 @@ import { LegalPage } from './components/LegalPage';
 import { CtaBand } from './components/CtaBand';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { COMPANY_INFO, PRODUCTS, Product } from './data/products';
+import { COMPANY_INFO, PRODUCTS, PRODUCT_CATEGORIES, Product } from './data/products';
 import { PRIVACY_POLICY, TERMS } from './data/legal';
+import { Route, useRoute } from './router';
+
+const PAGE_TITLES: Partial<Record<Route['page'], string>> = {
+  products: 'Products',
+  golf: 'Golf T-Shirts',
+  'custom-printing': 'Custom Printing',
+  'corporate-gifts': 'Corporate Gifts',
+  about: 'About',
+  contact: 'Contact',
+  'privacy-policy': 'Privacy policy',
+  terms: 'Terms',
+};
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<string>('home');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All Products');
-  const [activeProduct, setActiveProduct] = useState<Product | null>(null);
+  const [route, navigate] = useRoute();
 
-  // Scroll to top whenever tab changes
+  const categoryName = route.page === 'products' && route.category
+    ? PRODUCT_CATEGORIES.find((c) => c.slug === route.category)?.name
+    : undefined;
+  const product = route.page === 'product' ? PRODUCTS.find((p) => p.id === route.productId) : undefined;
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [activeTab]);
+    const title = product?.title ?? categoryName ?? PAGE_TITLES[route.page];
+    document.title = title
+      ? `${title} | Wild Collective`
+      : 'Wild Collective | Custom T-Shirt Printing & Corporate Gifts';
+  }, [route, product, categoryName]);
 
-  const goTo = (tab: string) => {
-    setActiveProduct(null);
-    setActiveTab(tab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const goTo = (page: string) => navigate({ page } as Route);
+  const showCategory = (name: string) => {
+    const slug = PRODUCT_CATEGORIES.find((c) => c.name === name)?.slug;
+    navigate({ page: 'products', category: slug });
   };
-
-  const handleSelectProductById = (productId: string) => {
-    const prod = PRODUCTS.find((p) => p.id === productId);
-    if (prod) {
-      setActiveProduct(prod);
-    }
-  };
-
-  const showCategory = (categoryName: string) => {
-    setSelectedCategory(categoryName);
-    goTo('products');
-  };
-
-  const showAllProducts = () => showCategory('All Products');
+  const showAllProducts = () => navigate({ page: 'products' });
+  const openProduct = (p: Product) => navigate({ page: 'product', productId: p.id });
   const buildQuote = () => goTo('contact');
+
+  const activeTab = route.page === 'product' ? 'products' : route.page;
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ffffff] text-[#2f2f2f] selection:bg-[#a58c6d] selection:text-white">
       <Navbar
         activeTab={activeTab}
-        setActiveTab={(tab) => {
-          if (tab === 'products') setSelectedCategory('All Products');
-          goTo(tab);
-        }}
-        onSelectProduct={handleSelectProductById}
+        setActiveTab={goTo}
+        onSelectProduct={(id) => navigate({ page: 'product', productId: id })}
       />
 
       <main className="flex-1">
-        {activeTab === 'home' && (
+        {(route.page === 'home' || route.page === 'not-found') && (
           <>
             <Hero onExploreProducts={showAllProducts} onExploreGolf={() => goTo('golf')} />
             <MarqueeTicker />
             <CategoryNav onSelectCategory={showCategory} onExploreFullCatalogue={showAllProducts} />
-            <FeaturedProducts onOpenProductDetail={setActiveProduct} />
+            <FeaturedProducts onOpenProductDetail={openProduct} />
             <ProcessSteps />
             <GiftingTeaser onPlan={() => goTo('corporate-gifts')} />
             <CtaBand
@@ -82,44 +86,44 @@ export default function App() {
           </>
         )}
 
-        {activeTab === 'products' && (
+        {route.page === 'products' && (
           <ProductCatalog
-            selectedCategory={selectedCategory}
-            onSelectCategory={setSelectedCategory}
-            onOpenProductDetail={setActiveProduct}
+            selectedCategory={categoryName ?? 'All Products'}
+            onSelectCategory={(name) => (name === 'All Products' ? showAllProducts() : showCategory(name))}
+            onOpenProductDetail={openProduct}
             onBuildQuote={buildQuote}
           />
         )}
 
-        {activeTab === 'golf' && <GolfTShirtsSection onExploreApparel={() => showCategory('Apparel')} />}
+        {product && (
+          <ProductPage
+            product={product}
+            onBack={() => navigate({ page: 'products', category: product.categorySlug })}
+            onOpenProduct={openProduct}
+            onBuildQuote={buildQuote}
+          />
+        )}
 
-        {activeTab === 'custom-printing' && (
+        {route.page === 'golf' && <GolfTShirtsSection onExploreApparel={() => showCategory('Apparel')} />}
+
+        {route.page === 'custom-printing' && (
           <CustomPrintingGuide onExploreCatalogue={showAllProducts} onBuildQuote={buildQuote} />
         )}
 
-        {activeTab === 'corporate-gifts' && (
-          <CorporateGiftBuilder onOpenProductDetail={setActiveProduct} onBuildQuote={buildQuote} />
+        {route.page === 'corporate-gifts' && (
+          <CorporateGiftBuilder onOpenProductDetail={openProduct} onBuildQuote={buildQuote} />
         )}
 
-        {activeTab === 'about' && (
+        {route.page === 'about' && (
           <AboutSection onExploreApparel={() => showCategory('Apparel')} onBuildQuote={buildQuote} />
         )}
 
-        {activeTab === 'contact' && <ContactSection />}
+        {route.page === 'contact' && <ContactSection />}
 
-        {activeTab === 'privacy-policy' && (
-          <LegalPage doc={PRIVACY_POLICY} contactEmail={COMPANY_INFO.emails[0]} />
-        )}
+        {route.page === 'privacy-policy' && <LegalPage doc={PRIVACY_POLICY} contactEmail={COMPANY_INFO.emails[0]} />}
 
-        {activeTab === 'terms' && <LegalPage doc={TERMS} contactEmail={COMPANY_INFO.emails[0]} />}
+        {route.page === 'terms' && <LegalPage doc={TERMS} contactEmail={COMPANY_INFO.emails[0]} />}
       </main>
-
-      <ProductDetailModal
-        product={activeProduct}
-        onClose={() => setActiveProduct(null)}
-        onOpenProduct={setActiveProduct}
-        onBuildQuote={buildQuote}
-      />
 
       <FloatingWhatsApp />
 
