@@ -1,196 +1,123 @@
-import React, { useState } from 'react';
-import { 
-  PhoneCall, 
-  MessageCircle, 
-  Mail, 
-  MapPin, 
-  Instagram, 
-  Heart, 
-  ArrowUpRight,
-  Sparkles
-} from 'lucide-react';
-import { COMPANY_INFO, CATEGORIES } from '../data/products';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { COMPANY_INFO } from '../data/products';
 import { WildCollectiveLogo } from './WildCollectiveLogo';
-import { BrandAssetsModal } from './BrandAssetsModal';
 
 interface FooterProps {
   onNavigate: (tab: string) => void;
   onSelectCategory: (cat: string) => void;
 }
 
+const EXPLORE_LINKS = [
+  { label: 'Apparel', category: 'Apparel' },
+  { label: 'Caps', category: 'Caps' },
+  { label: 'Magnets', category: 'Fridge Magnets' },
+  { label: 'Keychains & Gifts', category: 'Keychains & Gifts' },
+  { label: 'Drinkware', category: 'Drinkware' },
+];
+
+const COMPANY_LINKS = [
+  { label: 'Custom Printing', tab: 'custom-printing' },
+  { label: 'Corporate Gifts', tab: 'corporate-gifts' },
+  { label: 'About', tab: 'about' },
+  { label: 'Contact', tab: 'contact' },
+];
+
+const headingClass = 'font-display font-bold text-sm uppercase tracking-wider text-[#d9bf94] mb-4';
+const linkClass = 'text-sm text-white/70 hover:text-white transition-colors text-left';
+
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
-  const [brandModalOpen, setBrandModalOpen] = useState(false);
   return (
-    <footer className="bg-[#2f2f2f] text-[#ffffff] pt-16 pb-12 border-t border-[#0a0a0a]">
+    <footer className="bg-[#2f2f2f] text-white pt-16 pb-10 border-t border-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          
-          {/* Col 1: Brand Info */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <WildCollectiveLogo variant="light" height={48} className="max-h-12 w-auto" />
-            </div>
-
-            <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
-              Custom apparel, merchandise and corporate gifts made to put your brand into the real world. Honest, direct factory pricing on every order.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
+          <div className="lg:col-span-4 space-y-5">
+            <WildCollectiveLogo variant="light" height={48} className="max-h-12 w-auto" />
+            <p className="text-sm text-white/70 leading-relaxed max-w-sm">
+              Custom apparel, merchandise and corporate gifts made to put your brand into the real world.
             </p>
-
-            <div className="pt-2 text-xs text-slate-300 space-y-1">
-              <p><strong className="text-white">GSTIN:</strong> {COMPANY_INFO.gstin}</p>
-              <p><strong className="text-white">Registered Address:</strong></p>
-              <p className="text-slate-400 leading-normal">{COMPANY_INFO.address}</p>
-            </div>
+            <button
+              onClick={() => onNavigate('contact')}
+              className="px-5 py-3 rounded-sm bg-white text-[#2f2f2f] hover:bg-[#f5f3ef] font-bold text-sm uppercase tracking-wide inline-flex items-center gap-2 transition-colors"
+            >
+              <span>Start a quote</span>
+              <ArrowRight size={16} />
+            </button>
           </div>
 
-          {/* Col 2: Categories */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#d9bf94]">
-              Product Spectrum
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
-              {['Apparel', 'Golf T-Shirts', 'Drinkware', 'Bags & Accessories', 'Keychains & Gifts', 'Caps', 'Stickers, Badges & Stationery'].map((cat) => (
-                <li key={cat}>
-                  <button
-                    onClick={() => {
-                      onNavigate('products');
-                      onSelectCategory(cat);
-                    }}
-                    className="hover:text-white hover:underline transition-colors text-left"
-                  >
-                    {cat}
+          <nav className="lg:col-span-2" aria-label="Explore">
+            <h4 className={headingClass}>Explore</h4>
+            <ul className="space-y-2.5">
+              {EXPLORE_LINKS.map((l) => (
+                <li key={l.label}>
+                  <button onClick={() => onSelectCategory(l.category)} className={linkClass}>
+                    {l.label}
                   </button>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Col 3: Company & Services */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#d9bf94]">
-              Company
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
-              <li>
-                <button onClick={() => onNavigate('home')} className="hover:text-white hover:underline">
-                  Home
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('products')} className="hover:text-white hover:underline">
-                  Full Catalogue
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('golf')} className="hover:text-white hover:underline">
-                  Golf T-Shirts (Swing Style)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('custom-printing')} className="hover:text-white hover:underline">
-                  Custom Printing Guide
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('corporate-gifts')} className="hover:text-white hover:underline">
-                  Corporate Gifting Sets
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('about')} className="hover:text-white hover:underline">
-                  About Wild Collective
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('contact')} className="hover:text-white hover:underline">
-                  Contact & Support
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setBrandModalOpen(true)} 
-                  className="hover:text-[#d9bf94] hover:underline flex items-center gap-1 font-semibold text-[#d9bf94]"
-                >
-                  <Sparkles size={12} />
-                  <span>Exact Brand Logo & Files</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Direct Contacts */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-display font-extrabold text-sm uppercase tracking-wider text-[#d9bf94]">
-              Direct Contact
-            </h4>
-            
-            <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappRaw}?text=${encodeURIComponent("Hi Wild Collective, I would like to enquire about a quotation.")}`}
-              target="_blank"
-              rel="noreferrer"
-              className="p-3 rounded-xl bg-[#26d07c] text-[#0d3f23] font-bold text-xs flex items-center gap-2 hover:bg-[#20b86c] transition-colors"
-            >
-              <MessageCircle size={18} className="fill-[#0d3f23]" />
-              <span>WhatsApp: {COMPANY_INFO.whatsapp}</span>
-            </a>
-
-            <a
-              href={`tel:${COMPANY_INFO.phoneRaw}`}
-              className="p-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs flex items-center gap-2 transition-colors border border-white/10"
-            >
-              <PhoneCall size={16} className="text-[#d9bf94]" />
-              <span>Phone: {COMPANY_INFO.phone}</span>
-            </a>
-
-            <div className="space-y-1.5 text-xs text-slate-300">
-              {COMPANY_INFO.emails.map((email) => (
-                <div key={email} className="flex items-center gap-2">
-                  <Mail size={14} className="text-slate-400 shrink-0" />
-                  <a href={`mailto:${email}`} className="hover:underline">
-                    {email}
-                  </a>
-                </div>
+          <nav className="lg:col-span-2" aria-label="Company">
+            <h4 className={headingClass}>Company</h4>
+            <ul className="space-y-2.5">
+              {COMPANY_LINKS.map((l) => (
+                <li key={l.label}>
+                  <button onClick={() => onNavigate(l.tab)} className={linkClass}>
+                    {l.label}
+                  </button>
+                </li>
               ))}
-              <div className="flex items-center gap-2 pt-1">
-                <Instagram size={14} className="text-slate-400 shrink-0" />
-                <a href={COMPANY_INFO.instagram} target="_blank" rel="noreferrer" className="hover:underline">
-                  @wildcollective.store
+            </ul>
+          </nav>
+
+          <div className="lg:col-span-4">
+            <h4 className={headingClass}>Contact</h4>
+            <address className="not-italic text-sm text-white/70 space-y-2 leading-relaxed">
+              <strong className="block text-white">{COMPANY_INFO.legalName}</strong>
+              <span className="block">{COMPANY_INFO.address}</span>
+              <span className="block">
+                Support:{' '}
+                <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="text-white hover:text-[#d9bf94]">
+                  {COMPANY_INFO.phone}
                 </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Large Decorative Wordmark */}
-        <div className="py-10 text-center select-none overflow-hidden">
-          <p className="font-display font-black text-3xl sm:text-5xl lg:text-7xl tracking-tighter text-white/15 uppercase">
-            WILD COLLECTIVE
-          </p>
-        </div>
-
-        {/* Copyright & Legal Sub-footer */}
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div>
-            © 2026 Wild Collective. All rights reserved.
-          </div>
-          <div className="flex items-center gap-6">
-            <span className="text-slate-400">
-              Store: <span className="text-white font-bold">Wild Collective</span>
-            </span>
-            <span className="text-slate-500">|</span>
-            <span>contact@wildcollective.store</span>
+              </span>
+              {COMPANY_INFO.emails.map((email) => (
+                <a key={email} href={`mailto:${email}`} className="block hover:text-white">
+                  {email}
+                </a>
+              ))}
+              <span className="block">GSTIN: {COMPANY_INFO.gstin}</span>
+            </address>
           </div>
         </div>
 
+        <div className="pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <ul className="flex flex-wrap gap-6 text-sm">
+            <li>
+              <a href={COMPANY_INFO.instagram} target="_blank" rel="noreferrer" className={linkClass}>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('privacy-policy')} className={linkClass}>
+                Privacy policy
+              </button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('terms')} className={linkClass}>
+                Terms
+              </button>
+            </li>
+          </ul>
+          <p className="font-display text-xl sm:text-2xl font-black tracking-widest text-white/90">MAKE YOUR BRAND TANGIBLE.</p>
+        </div>
+
+        <div className="pt-8 mt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/50">
+          <p>© {new Date().getFullYear()} Wild Collective.</p>
+          <p>Custom Printing · Merchandise · Corporate Gifts</p>
+        </div>
       </div>
-
-      {/* Official Brand Assets & Exact Logo Modal */}
-      <BrandAssetsModal 
-        isOpen={brandModalOpen} 
-        onClose={() => setBrandModalOpen(false)} 
-      />
     </footer>
   );
 };

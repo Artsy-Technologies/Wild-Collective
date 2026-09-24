@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
-import { COMPANY_INFO } from '../data/products';
+import { whatsappDiscuss } from '../data/products';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(true);
 
-  const whatsappUrl = `https://wa.me/${COMPANY_INFO.whatsappRaw}?text=${encodeURIComponent(
-    "Hi Wild Collective,\n\nI would like to get a quotation for custom merchandise / apparel."
-  )}`;
+  const whatsappUrl = whatsappDiscuss();
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">

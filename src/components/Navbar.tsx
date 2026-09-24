@@ -13,7 +13,6 @@ import {
   Compass
 } from 'lucide-react';
 import { COMPANY_INFO, PRODUCTS } from '../data/products';
-import { ProductVisual } from './ProductVisual';
 import { WildCollectiveLogo } from './WildCollectiveLogo';
 import { BrandAssetsModal } from './BrandAssetsModal';
 
@@ -21,27 +20,24 @@ interface NavbarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
   onSelectProduct: (productId: string) => void;
-  onOpenStudio: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   setActiveTab,
   onSelectProduct,
-  onOpenStudio,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [brandModalOpen, setBrandModalOpen] = useState(false);
 
-  const navItems = [
+  const navItems: { id: string; label: string }[] = [
     { id: 'home', label: 'Home' },
-    { id: 'products', label: 'Products', count: PRODUCTS.length },
-    { id: 'golf', label: 'Golf T-Shirts', badge: 'Swing Style' },
+    { id: 'products', label: 'Products' },
+    { id: 'golf', label: 'Golf T-Shirts' },
     { id: 'custom-printing', label: 'Custom Printing' },
     { id: 'corporate-gifts', label: 'Corporate Gifts' },
-    { id: 'studio', label: 'Live Studio', highlight: true },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -54,11 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     : [];
 
   const handleNavClick = (tabId: string) => {
-    if (tabId === 'studio') {
-      onOpenStudio();
-    } else {
-      setActiveTab(tabId);
-    }
+    setActiveTab(tabId);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -179,23 +171,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className={`relative px-3.5 py-2 text-sm font-bold uppercase tracking-wide whitespace-nowrap rounded-sm transition-colors duration-150 flex items-center gap-1.5 ${
                     isActive
                       ? 'bg-[#0a0a0a] text-white'
-                      : item.highlight
-                        ? 'text-[#a58c6d] hover:bg-[#0a0a0a] hover:text-white'
-                        : 'text-[#2f2f2f] hover:bg-[#0a0a0a] hover:text-white'
+                      : 'text-[#2f2f2f] hover:bg-[#0a0a0a] hover:text-white'
                   }`}
                 >
-                  {item.highlight && <Sparkles size={14} />}
                   <span>{item.label}</span>
-                  {item.count && (
-                    <span className="text-[10px] font-bold px-1.5 rounded-sm bg-[#a58c6d] text-white">
-                      {item.count}
-                    </span>
-                  )}
-                  {item.badge && (
-                    <span className="text-[9px] uppercase font-bold px-1.5 py-0.5 rounded-sm bg-[#627d47] text-white tracking-wider">
-                      {item.badge}
-                    </span>
-                  )}
                 </button>
               );
             })}
@@ -215,19 +194,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  {item.highlight && <Sparkles size={16} className="text-[#d9bf94]" />}
                   <span>{item.label}</span>
                 </div>
-                {item.badge && (
-                  <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-[#e4ead9] text-[#4d6438]">
-                    {item.badge}
-                  </span>
-                )}
-                {item.count && (
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#f1ebe3] text-[#2f2f2f]">
-                    {item.count} items
-                  </span>
-                )}
               </button>
             ))}
 
@@ -254,7 +222,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <div className="text-center pt-2 text-xs text-[#666666] space-y-0.5">
                 <p>Email: {COMPANY_INFO.emails.join(' · ')}</p>
-                <p className="text-[11px] text-[#8f8f8f]">Direct factory pricing · Mysuru</p>
+                <p className="text-[11px] text-[#8f8f8f]">Custom Printing · Merchandise · Corporate Gifts</p>
               </div>
             </div>
           </div>
@@ -286,7 +254,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="max-h-96 overflow-y-auto p-4">
               {searchQuery.trim() === '' ? (
                 <div className="py-8 text-center text-sm text-[#666666]">
-                  <p className="font-semibold text-base text-[#2f2f2f] mb-1">Explore our full Mysuru catalogue</p>
+                  <p className="font-semibold text-base text-[#2f2f2f] mb-1">Explore the full catalogue</p>
                   <p>Type any product name, apparel category, drinkware, bag, or gift item.</p>
                   <div className="flex flex-wrap justify-center gap-2 mt-4">
                     {['Round Neck T-Shirt', 'Collar T-Shirt', 'UV Bottle', 'Hoodie', 'Tote Bag', 'Diary', 'Smart Caps'].map(tag => (
@@ -310,13 +278,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     >
                       <div className="flex items-center gap-3.5">
                         <div className="w-14 h-14 rounded-lg bg-white border border-[#dddddd] p-1 flex items-center justify-center shrink-0 overflow-hidden">
-                          <ProductVisual
-                            productId={p.id}
-                            category={p.category}
-                            title={p.title}
-                            image={p.image}
-                            className="w-full h-full"
-                          />
+                          <img src={p.image} alt="" className="w-full h-full object-cover" />
                         </div>
                         <div>
                           <span className="text-[11px] font-bold uppercase tracking-wider text-[#a58c6d]">
@@ -342,7 +304,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             <div className="bg-[#f5f3ef] px-4 py-2.5 border-t border-[#dddddd] text-xs text-[#666666] flex items-center justify-between">
-              <span>Showing results from 40+ Wild Collective products</span>
+              <span>Showing results from {PRODUCTS.length} Wild Collective products</span>
               <button 
                 onClick={() => { setSearchOpen(false); handleNavClick('products'); }}
                 className="font-bold text-[#2f2f2f] hover:underline"
