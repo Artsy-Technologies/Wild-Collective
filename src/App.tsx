@@ -72,7 +72,7 @@ export default function App() {
       <main className="flex-1">
         {(route.page === 'home' || route.page === 'not-found') && (
           <>
-            <Hero onExploreProducts={showAllProducts} onExploreGolf={() => goTo('golf')} />
+            <Hero onExploreProducts={showAllProducts} />
             <MarqueeTicker />
             <CategoryNav onSelectCategory={showCategory} onExploreFullCatalogue={showAllProducts} />
             <FeaturedProducts onOpenProductDetail={openProduct} />

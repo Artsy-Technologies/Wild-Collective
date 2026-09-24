@@ -1511,26 +1511,6 @@ export const PRODUCT_HIGHLIGHTS = [
 export const QUOTATION_NOTE =
   'Prices and minimum quantities may vary depending on product specification, customization and order requirement. Contact Wild Collective for the final quotation.';
 
-export const BRAND_FAMILY = [
-  {
-    name: 'Swing Style',
-    tagline: 'Classic golf style with a clean, sporting identity.',
-    logo: '/brand/swing-style-logo.png',
-    link: 'golf',
-    linkLabel: 'Explore golf T-shirts',
-  },
-  {
-    name: 'TEON',
-    tagline: 'A bold contemporary mark with a strong, minimal presence.',
-    logo: '/brand/teon-logo.png',
-  },
-  {
-    name: 'London Tailor',
-    tagline: 'Heritage-inspired tailoring with an unmistakable signature.',
-    logo: '/brand/london-tailor-logo.png',
-  },
-];
-
 export const MARQUEE_ITEMS = [
   'Custom apparel',
   'Corporate gifts',
@@ -1585,7 +1565,7 @@ export const COMPANY_INFO = {
   "legalName": "RIVER TERN CORPORATION",
   "tagline": "Your Brand. Made Wearable.",
   "subTagline": "Custom Printing \u00b7 Merchandise \u00b7 Corporate Gifts",
-  "address": "No. 19, 2nd Main Road, 15th Cross, 3rd Stage, Gokulam, Mysuru (Mysore), Karnataka 570002",
+  "address": "NO.19, 2ND MAIN ROAD, 15TH CROSS, 3RD STAGE, GOKULAM, MYSURU, Mysuru (Mysore), Karnataka, 570002",
   "phone": "+91 99454 21777",
   "phoneRaw": "+919945421777",
   "whatsapp": "+91 99454 21777",
