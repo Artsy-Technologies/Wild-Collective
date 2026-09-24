@@ -1,21 +1,13 @@
 import React from 'react';
 import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react';
 import { BRAND_FAMILY, whatsappDiscuss } from '../data/products';
+import { ProductConstellation } from './ProductConstellation';
 
 interface HeroProps {
   onExploreProducts: () => void;
   onExploreGolf: () => void;
 }
 
-const HERO_VIEWS = [
-  { src: '/images/products/collar-tshirt-back.webp', alt: '', className: 'left-0 top-10 w-[42%] rotate-[-6deg] opacity-90' },
-  { src: '/images/products/collar-tshirt-side.webp', alt: '', className: 'right-0 top-4 w-[44%] rotate-[5deg] opacity-95' },
-  {
-    src: '/images/products/collar-tshirt-front.webp',
-    alt: 'Model wearing a green custom collar T-shirt',
-    className: 'left-1/2 -translate-x-1/2 bottom-0 w-[58%] z-10 shadow-xl',
-  },
-];
 
 export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExploreGolf }) => {
   return (
@@ -62,25 +54,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExploreGolf }) 
             </div>
 
             {/* Right Column: Collar T-shirt / 03 views */}
-            <div className="lg:col-span-6">
-              <div
-                className="relative bg-[#f5f3ef] rounded-lg p-6 h-[420px] sm:h-[500px] overflow-hidden"
-                role="img"
-                aria-label="Three views of a custom green collar T-shirt"
-              >
-                <span className="absolute top-5 left-6 z-20 text-[11px] font-bold uppercase tracking-widest text-[#666666]" aria-hidden="true">
-                  Collar T-Shirt / 03 Views
-                </span>
-                {HERO_VIEWS.map((v) => (
-                  <img
-                    key={v.src}
-                    src={v.src}
-                    alt={v.alt}
-                    aria-hidden={v.alt ? undefined : true}
-                    className={`absolute aspect-[4/5] object-cover rounded-md bg-white ${v.className}`}
-                  />
-                ))}
-              </div>
+            <div className="lg:col-span-6 w-full">
+              <ProductConstellation variant="apparel" />
             </div>
           </div>
         </div>

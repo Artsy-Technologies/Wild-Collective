@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { FEATURED_PRODUCT_IDS, PROCESS_STEPS, PRODUCTS, Product } from '../data/products';
 import { ProductCard } from './ProductCard';
+import { ProductConstellation } from './ProductConstellation';
 
 export const FeaturedProducts: React.FC<{ onOpenProductDetail: (p: Product) => void }> = ({ onOpenProductDetail }) => {
   const featured = FEATURED_PRODUCT_IDS.map((id) => PRODUCTS.find((p) => p.id === id)).filter(Boolean) as Product[];
@@ -56,20 +57,7 @@ export const ProcessSteps: React.FC = () => (
   </section>
 );
 
-export const GiftSetVisual: React.FC = () => (
-  <div
-    className="relative bg-[#f5f3ef] rounded-lg h-[380px] sm:h-[440px] overflow-hidden"
-    role="img"
-    aria-label="A diary, engraved pen and bottle arranged as a corporate gift set"
-  >
-    <span className="absolute top-5 left-6 z-20 text-[11px] font-bold uppercase tracking-widest text-[#666666]" aria-hidden="true">
-      Gift Set / 03 Pieces
-    </span>
-    <img src="/images/products/diary-black.png" alt="Black branded diary" className="absolute left-[6%] top-[14%] w-[52%] object-contain drop-shadow-xl" />
-    <img src="/images/products/corporate-gift-black-bottle.png" alt="Black custom bottle with a carry strap" className="absolute right-[10%] top-[10%] h-[70%] object-contain drop-shadow-xl" />
-    <img src="/images/products/metal-pen-customisation.png" alt="Custom engraved metal pen" className="absolute left-[10%] bottom-[4%] w-[70%] object-contain drop-shadow-lg z-10" />
-  </div>
-);
+export const GiftSetVisual: React.FC = () => <ProductConstellation variant="gifts" />;
 
 export const GiftingTeaser: React.FC<{ onPlan: () => void }> = ({ onPlan }) => (
   <section className="py-16 sm:py-24 overflow-hidden">
